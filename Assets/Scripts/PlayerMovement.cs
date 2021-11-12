@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private LayerMask jumpableGround;
 
-    private enum MovementState { idle, running, jumping }
+    private enum MovementState { idle, running, jumping, falling }
 
     // Start is called before the first frame update
     private void Start()
@@ -63,10 +63,14 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        // jumping has the highest priority so it can overwrite state
-        if (rb.velocity.y > .1f)
+        // jumping and falling has the highest priority so it can overwrite state
+        if (rb.velocity.y > 0.1f)
         {
             state = MovementState.jumping;
+        } 
+        else if (rb.velocity.y < -0.1f)
+        {
+            state = MovementState.falling;
         }
 
         animator.SetInteger("state", (int)state);
