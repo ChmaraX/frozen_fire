@@ -5,19 +5,22 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private PolygonCollider2D coll;
     private SpriteRenderer sprite;
     private Animator animator;
 
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private LayerMask jumpableGround;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, running, jumping }
 
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<PolygonCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -29,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -60,16 +63,19 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        // jumping has the highest priority from other animations
+        // jumping has the highest priority so it can overwrite state
         if (rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
         }
-        else if (rb.velocity.y < -.1f)
-        {
-            state = MovementState.falling;
-        }
 
         animator.SetInteger("state", (int)state);
+    }
+
+    private bool IsGrounded()
+    {
+        // checks if box around player is overlapping "jumpableGround" (terrain which has mask Ground)
+        // box around player is moved by .2f down so overlap is possible
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .2f, jumpableGround);
     }
 }
