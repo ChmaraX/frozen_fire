@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private LayerMask jumpableGround;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, running, jumping, falling, dash }
 
     // Start is called before the first frame update
     private void Start()
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-        
+
         UpdateAnimationState();
     }
 
@@ -61,6 +61,13 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = MovementState.idle;
+        }
+
+        // dash-crouch
+        if (Input.GetKeyDown("s") && IsGrounded())
+        {
+            // TODO: make collider take less space
+            state = MovementState.dash;
         }
 
         // jumping and falling has the highest priority so it can overwrite state
