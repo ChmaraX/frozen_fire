@@ -9,6 +9,6 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         // focus camera on player and keep own Z position
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        transform.position = new Vector3(player.position.x, player.position.y * 0.25f, transform.position.z);
     }
 }
