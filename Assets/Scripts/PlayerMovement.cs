@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    // TODO: separate projectile from PlayerMovement
+    // create general Character controlls class
+    // which includes movements, projectile etc.
+    public ProjectileBehaviour projectilePrefab;
+
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
 
@@ -81,6 +86,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 StopCrouch();
             }
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            // "+ 1" is offset from which to shoot, we need only to right
+            // TODO: separate to variable or dynamically to end of a gun or hand or something
+            Instantiate(projectilePrefab, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
         }
 
         UpdateAnimationState();
