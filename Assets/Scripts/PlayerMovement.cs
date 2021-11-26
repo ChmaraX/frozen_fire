@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     // which includes movements, projectile etc.
     public ProjectileBehaviour projectilePrefab;
 
-    private float dirX = 0f;
+    private float dirX = 1.0f;
     [SerializeField] private float moveSpeed = 7f;
 
     [SerializeField] private float jumpForce = 14f;
@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         // movement possible on ground
@@ -101,24 +100,24 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         MovementState state;
-
+        state = MovementState.running;
         // if moving to right
         if (dirX > 0f)
         {
-            state = MovementState.running;
+            // state = MovementState.running;
             spriteRenderer.flipX = false;
         }
         // if moving to left (we prob. don't need this) 
         else if (dirX < 0f)
         {
-            state = MovementState.running;
+            // state = MovementState.running;
             spriteRenderer.flipX = true;
         }
-        // not moving
-        else
-        {
-            state = MovementState.idle;
-        }
+        //TODO state when not moving probably not needed -> remove
+        // else
+        // {
+        //     state = MovementState.idle;
+        // }
 
         // slide-crouch
         if (isCrouching)
