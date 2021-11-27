@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2691614768734609403}
   - component: {fileID: 2691614768734609400}
   m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Untagged
+  m_Name: FireProjectile
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +47,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3128534, y: -0.014329165}
+  m_Offset: {x: 0.30979538, y: -0.014329165}
   serializedVersion: 2
-  m_Radius: 0.24059933
+  m_Radius: 0.23754132
 --- !u!50 &2691614768734609403
 Rigidbody2D:
   serializedVersion: 4
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  projectileLife: 0
 --- !u!1 &2691614769926033483
 GameObject:
   m_ObjectHideFlags: 0

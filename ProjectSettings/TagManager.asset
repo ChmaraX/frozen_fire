@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Trap
   - Coin
+  - FxTemporaire
+  - Undefined
+  - Projectile
   layers:
   - Default
   - TransparentFX
