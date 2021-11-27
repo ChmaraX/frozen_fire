@@ -10,6 +10,10 @@ TagManager:
   - Undefined
   - Projectile
   - FireTrap
+  - IndestructibleTrap
+  - IceTrap
+  - IceProjectile
+  - FireProjectile
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2691614768734609400}
   m_Layer: 0
   m_Name: IceProjectile
-  m_TagString: Projectile
+  m_TagString: IceProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8e29dc369b25640a988ae17b17b3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 5943801969627369564, guid: 4abd15a5a76f1bd469a96001f5178e18, type: 3}
   speed: 20
   projectileLife: 0
 --- !u!1 &2691614769926033483

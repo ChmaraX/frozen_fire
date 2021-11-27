@@ -10,7 +10,7 @@ public class IceTrapBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Projectile")) 
+        if (collision.gameObject.CompareTag("FireProjectile")) 
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);

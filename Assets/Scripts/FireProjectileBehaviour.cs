@@ -5,6 +5,9 @@ using UnityEngine;
 public class FireProjectileBehaviour : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject destroyEffect;
+
     public readonly float defaultProjectileLifetime = 3f;
 
     public float speed = 4.5f;
@@ -30,9 +33,12 @@ public class FireProjectileBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Trap")) {
-            Destroy(collision.gameObject);
+        //only destroy iceTrap type
+        if (!collision.gameObject.CompareTag("IceTrap")) 
+        {
+            Instantiate(destroyEffect, transform.position, Quaternion.identity);
         }
+        
         Destroy(gameObject);
     }
 }
