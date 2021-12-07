@@ -11,9 +11,10 @@ public class HUD : MonoBehaviour
     void Start()
     {
         Inventory.ItemAdded += InventoryScript_ItemAdded;
+        Inventory.ItemRemoved += Inventory_ItemRemoved;
     }
 
-   private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
+    private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("Inventory");
 
@@ -29,6 +30,25 @@ public class HUD : MonoBehaviour
 
                 // store a reference to the item
                 itemClickHandler.Item = e.Item;
+                break;
+            }
+        }
+    }
+
+    private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
+    {
+        Transform inventoryPanel = transform.Find("Inventory");
+
+        foreach (Transform slot in inventoryPanel)
+        {
+            Image image = slot.GetChild(0).GetComponent<Image>();
+            ItemClickHandler itemClickHandler = slot.GetChild(0).GetComponent<ItemClickHandler>();
+
+            // we found the item in slot
+            if (itemClickHandler.Item.Equals(e.Item))
+            {
+                image.enabled = false;
+                image.sprite = null;
                 break;
             }
         }

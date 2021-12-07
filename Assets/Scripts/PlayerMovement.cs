@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     // create general Character controlls class
     // which includes movements, projectile etc.
     public FireProjectileBehaviour fireProjectile;
-
     public IceProjectileBehaviour iceProjectile;
 
     private float dirX = 1.0f;
@@ -33,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     private enum MovementState { idle, running, jumping, falling, crouching }
 
+    public Inventory inventory;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -46,6 +47,27 @@ public class PlayerMovement : MonoBehaviour
 
         crouchingSize = new Vector2(standingSize.x, standingSize.y * 0.5f);
         crouchingOffset = new Vector2(crouchingOffset.x, -1);
+
+        inventory.ItemUsed += Inventory_ItemUsed;
+
+    }
+
+    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
+    {
+        IInventoryItem item = e.Item;
+        Debug.Log(item.Name + "used");
+
+        // Projectiles are depended on player position thats why they are here
+        switch (item.Name)
+        {
+            case "Fireball":
+                Instantiate(fireProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
+                break;
+            case "Iceball":
+                Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
+                break;
+            default: break;
+        }
     }
 
     // Update is called once per frame

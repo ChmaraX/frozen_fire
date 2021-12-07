@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FireballItem : MonoBehaviour, IInventoryItem
 {
+
     public string Name
     {
         get
@@ -22,7 +23,6 @@ public class FireballItem : MonoBehaviour, IInventoryItem
 
     public void OnPickUp()
     {
-        // TODO: additional logic what happens when fireball is picked up
         gameObject.SetActive(false);
     }
 

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ItemClickHandler : MonoBehaviour
 {
+    public Inventory _Inventory;
     public IInventoryItem Item { get; set; }
 
     public void OnItemClicked()
     {
-         Item.OnUse();
+        _Inventory.UseItem(Item);
     }
 
 }

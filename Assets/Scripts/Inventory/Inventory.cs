@@ -10,6 +10,15 @@ public class Inventory : MonoBehaviour
     private List<IInventoryItem> mItems = new List<IInventoryItem>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
+    public event EventHandler<InventoryEventArgs> ItemRemoved;
+    public event EventHandler<InventoryEventArgs> ItemUsed;
+
+    internal void UseItem(IInventoryItem item)
+    {
+        ItemUsed?.Invoke(this, new InventoryEventArgs(item));
+        item.OnUse();
+        RemoveItem(item);
+    }
 
     public void AddItem(IInventoryItem item)
     {
@@ -17,15 +26,20 @@ public class Inventory : MonoBehaviour
         {
             Collider2D collider = (item as MonoBehaviour).GetComponent<Collider2D>();
 
-            if (collider.enabled)
-            {
-                collider.enabled = false;
-                mItems.Add(item);
-                item.OnPickUp();
+            Destroy(collider.gameObject);
+            mItems.Add(item);
+            item.OnPickUp();
 
-                ItemAdded?.Invoke(this, new InventoryEventArgs(item));
-            }
+            ItemAdded?.Invoke(this, new InventoryEventArgs(item));
+        }
+    }
 
+    public void RemoveItem(IInventoryItem item)
+    {
+        if (mItems.Contains(item))
+        {
+            mItems.Remove(item);
+            ItemRemoved?.Invoke(this, new InventoryEventArgs(item));
         }
     }
 }
