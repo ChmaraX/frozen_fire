@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     private const int SLOTS = 5;
 
-    private List<IInventoryItem> mItems = new List<IInventoryItem>();
+    public List<IInventoryItem> mItems = new List<IInventoryItem>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;

@@ -45,10 +45,11 @@ public class HUD : MonoBehaviour
             ItemClickHandler itemClickHandler = slot.GetChild(0).GetComponent<ItemClickHandler>();
 
             // we found the item in slot
-            if (itemClickHandler.Item.Equals(e.Item))
+            if (itemClickHandler.Item != null && itemClickHandler.Item.Equals(e.Item))
             {
                 image.enabled = false;
                 image.sprite = null;
+                itemClickHandler.Item = null;
                 break;
             }
         }
