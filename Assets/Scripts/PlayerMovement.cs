@@ -89,12 +89,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            // "+ 1" is offset from which to shoot, we need only to right
-            // TODO: separate to variable or dynamically to end of a gun or hand or something
-            Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    // "+ 1" is offset from which to shoot, we need only to right
+        //    // TODO: separate to variable or dynamically to end of a gun or hand or something
+        //    Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
+        //}
 
         UpdateAnimationState();
     }

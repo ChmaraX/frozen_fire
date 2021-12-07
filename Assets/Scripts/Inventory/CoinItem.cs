@@ -25,4 +25,9 @@ public class CoinItem : MonoBehaviour, IInventoryItem
         // TODO: additional logic what happens when fireball is picked up
         gameObject.SetActive(false);
     }
+
+    public void OnUse()
+    {
+        // coins can't be used
+    }
 }

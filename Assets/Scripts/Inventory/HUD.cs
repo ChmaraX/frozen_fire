@@ -20,14 +20,16 @@ public class HUD : MonoBehaviour
         foreach(Transform slot in inventoryPanel)
         {
             Image image = slot.GetChild(0).GetComponent<Image>();
+            ItemClickHandler itemClickHandler = slot.GetChild(0).GetComponent<ItemClickHandler>();
 
             if (!image.enabled)
             {
                 image.enabled = true;
                 image.sprite = e.Item.Image;
-                break;
 
-                //TODO: store a reference to an item
+                // store a reference to the item
+                itemClickHandler.Item = e.Item;
+                break;
             }
         }
     }

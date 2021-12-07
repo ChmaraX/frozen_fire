@@ -25,4 +25,9 @@ public class FireballItem : MonoBehaviour, IInventoryItem
         // TODO: additional logic what happens when fireball is picked up
         gameObject.SetActive(false);
     }
+
+    public void OnUse()
+    {
+        Debug.Log("Item Fireball was used");
+    }
 }
