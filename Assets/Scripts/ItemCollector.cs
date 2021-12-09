@@ -8,6 +8,7 @@ public class ItemCollector : MonoBehaviour
 
     public int collectedCoins = 0;
     public int collectedHPs = 0;
+    public Vector3 lastCheckpointPos;
 
     [SerializeField] private Text coinsText;
     [SerializeField] private Text hpsText;
@@ -32,12 +33,26 @@ public class ItemCollector : MonoBehaviour
             return;
         }
 
-        Debug.Log(item.Name);
-
+        // dont add hps to inventory
         if (item.Name == "HP")
         {
             increaseHPsBy(1);
             Destroy(collider.gameObject);
+            return;
+        }
+
+        if (item.Name == "Checkpoint")
+        {
+            lastCheckpointPos = collider.gameObject.transform.position;
+
+            // prevent checkpoint from being picked again
+            BoxCollider2D boxCollider2D = collider.gameObject.GetComponent<BoxCollider2D>();
+            boxCollider2D.enabled = false;
+
+            // change opacity to 0.5 to indicate it was already taken
+            SpriteRenderer sprite = collider.gameObject.GetComponent<SpriteRenderer>();
+            sprite.color = new Color(255, 255, 255, .5f);
+
             return;
         }
 

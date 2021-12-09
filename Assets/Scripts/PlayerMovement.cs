@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public IceProjectileBehaviour iceProjectile;
 
     private float dirX = 1.0f;
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] public float moveSpeed = 7f;
 
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float crouchForce = 14f;

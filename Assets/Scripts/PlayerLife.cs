@@ -7,11 +7,13 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private ItemCollector itemCollector;
+    private PlayerMovement playerMovement;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         itemCollector = GetComponent<ItemCollector>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,8 +24,9 @@ public class PlayerLife : MonoBehaviour
             {
                 itemCollector.decreaseHPsBy(1);
                 Debug.Log("Life lost");
-                //TODO: return to checkpoint?
-                RestartLevel();
+
+                // return to last checkpoint
+                HandleCheckpoint();
             }
             else
             {
@@ -45,5 +48,25 @@ public class PlayerLife : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void HandleCheckpoint()
+    {
+        Vector3 lastCheckpointPos = itemCollector.lastCheckpointPos;
+
+        // move player to last checkpoint position
+        transform.position = lastCheckpointPos;
+        playerMovement.moveSpeed = 0;
+
+        // wait for 2 seconds till player gets ready to continue
+        StartCoroutine(Wait(2));
+
+    }
+
+    private IEnumerator Wait(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        // restore movement speed back to normal
+        playerMovement.moveSpeed = 7f;
     }
 }
