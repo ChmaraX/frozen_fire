@@ -6,17 +6,29 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private ItemCollector itemCollector;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        itemCollector = GetComponent<ItemCollector>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Contains("Trap"))
         {
-            Die();
+            if (itemCollector.collectedHPs > 0)
+            {
+                itemCollector.decreaseHPsBy(1);
+                Debug.Log("Life lost");
+                //TODO: return to checkpoint?
+                RestartLevel();
+            }
+            else
+            {
+                Die();
+            }  
         }
     }
 

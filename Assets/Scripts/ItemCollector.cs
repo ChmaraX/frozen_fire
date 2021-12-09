@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
 
-    private int collectedCoins = 0;
+    public int collectedCoins = 0;
+    public int collectedHPs = 0;
 
-    [SerializeField] private Text coinsText; 
+    [SerializeField] private Text coinsText;
+    [SerializeField] private Text hpsText;
+
 
     public Inventory inventory;
 
@@ -16,18 +19,54 @@ public class ItemCollector : MonoBehaviour
     {
         IInventoryItem item = collider.gameObject.GetComponent<IInventoryItem>();
 
-        // dont add coins to inventory
-        if (item.Name == "Coin")
+        if (item == null)
         {
-            collectedCoins++;
-            Destroy(collider.gameObject);
-            coinsText.text = collectedCoins.ToString();
             return;
         }
 
-        if (item != null)
+        // dont add coins to inventory
+        if (item.Name == "Coin")
         {
-            inventory.AddItem(item);
+            increaseCoinsBy(1);
+            Destroy(collider.gameObject);
+            return;
         }
+
+        Debug.Log(item.Name);
+
+        if (item.Name == "HP")
+        {
+            increaseHPsBy(1);
+            Destroy(collider.gameObject);
+            return;
+        }
+
+        inventory.AddItem(item);
+
     }
+
+    private void increaseHPsBy(int amount)
+    {
+        collectedHPs += amount;
+        hpsText.text = collectedHPs.ToString();
+    }
+
+    public void decreaseHPsBy(int amount)
+    {
+        collectedHPs -= amount;
+        hpsText.text = collectedHPs.ToString();
+    }
+
+    private void increaseCoinsBy(int amount)
+    {
+        collectedCoins += amount;
+        coinsText.text = collectedCoins.ToString();
+    }
+
+    public void decreaseCoinsBy(int amount)
+    {
+        collectedCoins -= amount;
+        coinsText.text = collectedCoins.ToString();
+    }
+
 }
