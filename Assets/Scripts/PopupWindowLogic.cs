@@ -12,6 +12,7 @@ public class PopupWindowLogic : MonoBehaviour
         Debug.Log("Collision - poop up");
         Destroy(gameObject);
         popupRef.SetActive(true);
+
         //stop game time when popup is displayed
         Time.timeScale = 0f;
     }
