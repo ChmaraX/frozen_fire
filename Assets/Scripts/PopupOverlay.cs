@@ -11,23 +11,10 @@ public class PopupOverlay : MonoBehaviour
 
     public Text bodyTitleTextRef;
 
-    public string titleText;
-
-    public string bodyText;
-
-    //TODO set title & body text
-
-    public void Start() {
-        popupTitleTextRef.text = titleText;
-        bodyTitleTextRef.text = bodyText;
-    }
-
     public void SetPopupInactive() 
     {
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
-        Destroy(gameObject);
-        // gameObject.SetActive(false);
-        //resume game time when popup deactivated
     }
 
     
