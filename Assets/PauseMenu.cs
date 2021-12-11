@@ -23,7 +23,13 @@ public class PauseMenu : MonoBehaviour
         }    
     }
 
-    void ResumeGame() 
+    public void LoadMainMenu() 
+    {
+        Debug.Log("Main menu redirect, maybe display prompt");
+    }
+
+
+    public void ResumeGame() 
     {
         pauseMenuRef.SetActive(false);
         Time.timeScale = 1f;
