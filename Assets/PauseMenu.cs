@@ -2,6 +2,7 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu() 
     {
-        Debug.Log("Main menu redirect, maybe display prompt");
+        SceneManager.LoadScene("MainMenu");
     }
 
 
@@ -48,6 +49,5 @@ public class PauseMenu : MonoBehaviour
     {
         GamePaused = !GamePaused;
     }
-
 
 }
