@@ -7,11 +7,43 @@ public class Inventory : MonoBehaviour
 {
     private const int SLOTS = 5;
 
-    public List<IInventoryItem> mItems = new List<IInventoryItem>();
+    public IList<InventorySlot> mSlots = new List<InventorySlot>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;
     public event EventHandler<InventoryEventArgs> ItemUsed;
+
+    public Inventory()
+    {
+        for (int i = 0; i < SLOTS; i++)
+        {
+            mSlots.Add(new InventorySlot(i));
+        }
+    }
+
+    private InventorySlot FindStackableSlot(IInventoryItem item)
+    {
+        foreach (InventorySlot slot in mSlots)
+        {
+            if (slot.IsStackable(item))
+            {
+                return slot;
+            }
+        }
+        return null;
+    }
+
+    private InventorySlot FindNextEmptySlot()
+    {
+        foreach (InventorySlot slot in mSlots)
+        {
+            if (slot.IsEmpty)
+            {
+                return slot;
+            }
+        }
+        return null;
+    }
 
     internal void UseItem(IInventoryItem item)
     {
@@ -22,12 +54,16 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(IInventoryItem item)
     {
-        if (mItems.Count < SLOTS)
-        {
-            Collider2D collider = (item as MonoBehaviour).GetComponent<Collider2D>();
+        InventorySlot freeSlot = FindStackableSlot(item);
 
-            Destroy(collider.gameObject);
-            mItems.Add(item);
+        if (freeSlot == null)
+        {
+            freeSlot = FindNextEmptySlot();
+        }
+
+        if (freeSlot != null)
+        {
+            freeSlot.AddItem(item);
             item.OnPickUp();
 
             ItemAdded?.Invoke(this, new InventoryEventArgs(item));
@@ -36,10 +72,15 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(IInventoryItem item)
     {
-        if (mItems.Contains(item))
+        foreach (InventorySlot slot in mSlots)
         {
-            mItems.Remove(item);
-            ItemRemoved?.Invoke(this, new InventoryEventArgs(item));
+            bool isRemoved = slot.Remove(item);
+
+            if (isRemoved)
+            {
+                ItemRemoved?.Invoke(this, new InventoryEventArgs(item));
+                break;
+            }
         }
     }
 }

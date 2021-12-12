@@ -20,9 +20,22 @@ public class CoinItem : MonoBehaviour, IInventoryItem
         }
     }
 
+    public InventorySlot _Slot = null;
+
+    public InventorySlot Slot
+    {
+        get
+        {
+            return _Slot;
+        }
+        set
+        {
+            _Slot = value;
+        }
+    }
+
     public void OnPickUp()
     {
-        // TODO: additional logic what happens when fireball is picked up
         gameObject.SetActive(false);
     }
 
