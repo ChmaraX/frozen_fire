@@ -56,6 +56,15 @@ public class ItemCollector : MonoBehaviour
             return;
         }
 
+        if (item.GetType().ToString() == "FireballItem3x")
+        {
+            // add 3 Fireball items to inv
+            inventory.AddItem(item);
+            inventory.AddItem(item);
+            inventory.AddItem(item);
+            return;
+        }
+
         inventory.AddItem(item);
 
     }
