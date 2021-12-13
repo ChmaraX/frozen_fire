@@ -58,10 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-Assets/Scripts/.idea/.idea.Scripts.dir/.idea/vcs.xml
-Assets/Scripts/.idea/.idea.Scripts.dir/.idea/encodings.xml
-Assets/Scripts/.idea/.idea.Scripts.dir/.idea/indexLayout.xml
-UserSettings/EditorUserSettings.asset
-UserSettings/EditorUserSettings.asset
+Assets/Scripts/.idea/.idea.Scripts.dir/.idea/*
 UserSettings/EditorUserSettings.asset
 Assets/Scripts/Folder.DotSettings.user.meta
+
