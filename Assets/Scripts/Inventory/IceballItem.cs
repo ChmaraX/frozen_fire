@@ -34,9 +34,15 @@ public class IceballItem : MonoBehaviour, IInventoryItem
         }
     }
 
-    public void OnPickUp()
+    public bool IsStorable => true;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.SetActive(false);
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnUse()

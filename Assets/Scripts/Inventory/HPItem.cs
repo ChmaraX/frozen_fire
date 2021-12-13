@@ -34,9 +34,17 @@ public class HPItem : MonoBehaviour, IInventoryItem
         }
     }
 
-    public void OnPickUp()
+    public bool IsStorable => false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.SetActive(false);
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            ItemCollector itemCollector = collision.gameObject.GetComponent<ItemCollector>();
+            itemCollector.increaseHPsBy(1);
+            Destroy(gameObject);
+        }
     }
 
     public void OnUse()

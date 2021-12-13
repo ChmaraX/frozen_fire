@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class CoinItem : MonoBehaviour, IInventoryItem
+public class ChestItem : MonoBehaviour, IInventoryItem
 {
+
     public string Name
     {
         get
         {
-            return "Coin";
+            return "Chest";
         }
     }
 
@@ -42,12 +43,13 @@ public class CoinItem : MonoBehaviour, IInventoryItem
         if (collision.gameObject.CompareTag("Player"))
         {
             ItemCollector itemCollector = collision.gameObject.GetComponent<ItemCollector>();
-            itemCollector.increaseCoinsBy(1);
+            itemCollector.increaseCoinsBy(5);
             Destroy(gameObject);
         }
     }
 
     public void OnUse()
     {
+        Debug.Log("Item Chest was used");
     }
 }
