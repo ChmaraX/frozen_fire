@@ -21,6 +21,20 @@ public class CheckpointItem : MonoBehaviour, IInventoryItem
         }
     }
 
+    public InventorySlot _Slot = null;
+
+    public InventorySlot Slot
+    {
+        get
+        {
+            return _Slot;
+        }
+        set
+        {
+            _Slot = value;
+        }
+    }
+
     public void OnPickUp()
     {
         gameObject.SetActive(false);

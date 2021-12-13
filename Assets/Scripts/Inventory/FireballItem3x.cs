@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class FireballItem : MonoBehaviour, IInventoryItem
+public class FireballItem3x : MonoBehaviour, IInventoryItem
 {
-
     public string Name
     {
         get
@@ -42,6 +41,6 @@ public class FireballItem : MonoBehaviour, IInventoryItem
 
     public void OnUse()
     {
-        Debug.Log("Item Fireball was used");
+        Debug.Log("Item Fireball3x was used");
     }
 }

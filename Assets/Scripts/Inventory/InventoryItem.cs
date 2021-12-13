@@ -12,6 +12,8 @@ public interface IInventoryItem
     void OnPickUp();
 
     void OnUse();
+
+    InventorySlot Slot { get; set; }
 }
 
 public class InventoryEventArgs : EventArgs
