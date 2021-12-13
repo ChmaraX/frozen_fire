@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +11,6 @@ public class ItemCollector : MonoBehaviour
     [SerializeField] private Text coinsText;
     [SerializeField] private Text hpsText;
 
-
     public Inventory inventory;
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -25,51 +22,27 @@ public class ItemCollector : MonoBehaviour
             return;
         }
 
-        // dont add coins to inventory
-        if (item.Name == "Coin")
-        {
-            increaseCoinsBy(1);
-            Destroy(collider.gameObject);
-            return;
-        }
-
-        // dont add hps to inventory
-        if (item.Name == "HP")
-        {
-            increaseHPsBy(1);
-            Destroy(collider.gameObject);
-            return;
-        }
-
+      
         if (item.Name == "Checkpoint")
         {
             lastCheckpointPos = collider.gameObject.transform.position;
-
-            // prevent checkpoint from being picked again
-            BoxCollider2D boxCollider2D = collider.gameObject.GetComponent<BoxCollider2D>();
-            boxCollider2D.enabled = false;
-
-            // change opacity to 0.5 to indicate it was already taken
-            SpriteRenderer sprite = collider.gameObject.GetComponent<SpriteRenderer>();
-            sprite.color = new Color(255, 255, 255, .5f);
-
-            return;
         }
 
         if (item.GetType().ToString() == "FireballItem3x")
         {
-            // add 3 Fireball items to inv
+            // add +2 Fireball items to inv
             inventory.AddItem(item);
             inventory.AddItem(item);
-            inventory.AddItem(item);
-            return;
         }
 
-        inventory.AddItem(item);
+        if (item.IsStorable)
+        {
+            inventory.AddItem(item);
+        }
 
     }
 
-    private void increaseHPsBy(int amount)
+    public void increaseHPsBy(int amount)
     {
         collectedHPs += amount;
         hpsText.text = collectedHPs.ToString();
@@ -81,7 +54,7 @@ public class ItemCollector : MonoBehaviour
         hpsText.text = collectedHPs.ToString();
     }
 
-    private void increaseCoinsBy(int amount)
+    public void increaseCoinsBy(int amount)
     {
         collectedCoins += amount;
         coinsText.text = collectedCoins.ToString();

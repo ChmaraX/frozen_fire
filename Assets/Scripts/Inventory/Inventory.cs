@@ -64,8 +64,6 @@ public class Inventory : MonoBehaviour
         if (freeSlot != null)
         {
             freeSlot.AddItem(item);
-            item.OnPickUp();
-
             ItemAdded?.Invoke(this, new InventoryEventArgs(item));
         }
     }

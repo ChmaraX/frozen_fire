@@ -50,9 +50,6 @@ public class InventorySlot
             return true;
         }
 
-        Debug.Log(first.Name);
-        Debug.Log(item.Name);
-        Debug.Log(first.Name + "3x" == item.Name || first.Name == item.Name + "3x");
         if (first.Name + "3x" == item.Name || first.Name == item.Name + "3x")
         {
             return true;
