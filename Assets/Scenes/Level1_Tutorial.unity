@@ -16534,7 +16534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071219394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192.39, y: -1.26, z: -0.01}
+  m_LocalPosition: {x: 2.33, y: -3.02, z: -0.01}
   m_LocalScale: {x: 0.43917608, y: 0.4391761, z: 0.43917608}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17185,7 +17185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630430131348961189, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4630430131348961189, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18277,8 +18277,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 820939903}
   - {fileID: 1560607826}
+  - {fileID: 820939903}
   - {fileID: 357939439}
   - {fileID: 1570112700}
   - {fileID: 101812139}
@@ -19015,7 +19015,7 @@ PrefabInstance:
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1207788454}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBody
       value: You can also try sliding! Press and hold 'S' to slide
@@ -19027,11 +19027,11 @@ PrefabInstance:
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1876467501}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupTitleTextRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2054797158}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
 --- !u!1001 &1683946809
@@ -20616,7 +20616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630430131348961189, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4630430131348961189, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20660,7 +20660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7813690711475232315, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: m_Name
-      value: popup1-intro
+      value: Popup1-intro
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupRef
