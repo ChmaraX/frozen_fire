@@ -49,6 +49,5 @@ public class HPItem : MonoBehaviour, IInventoryItem
 
     public void OnUse()
     {
-        // coins can't be used
     }
 }

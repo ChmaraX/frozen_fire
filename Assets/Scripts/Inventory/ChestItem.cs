@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ChestItem : MonoBehaviour, IInventoryItem
@@ -43,13 +44,28 @@ public class ChestItem : MonoBehaviour, IInventoryItem
         if (collision.gameObject.CompareTag("Player"))
         {
             ItemCollector itemCollector = collision.gameObject.GetComponent<ItemCollector>();
-            itemCollector.increaseCoinsBy(5);
-            Destroy(gameObject);
+
+            var rnd = new System.Random(DateTime.Now.Millisecond);
+            int chance = rnd.Next(0, 100);
+
+            if (chance > 60)
+            {
+                itemCollector.increaseHPsBy(2);
+            } else
+            {
+                itemCollector.increaseCoinsBy(5);
+            }
+
+            Animator anim = gameObject.GetComponent<Animator>();
+            anim.SetBool("isOpen", true);
+
+            // prevent chest from being picked again
+            BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
+            boxCollider2D.enabled = false;
         }
     }
 
     public void OnUse()
     {
-        Debug.Log("Item Chest was used");
     }
 }

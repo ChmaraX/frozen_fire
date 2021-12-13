@@ -40,7 +40,6 @@ public class FireballItem3x : MonoBehaviour, IInventoryItem
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
             Destroy(gameObject);
         }
     }

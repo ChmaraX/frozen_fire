@@ -54,6 +54,5 @@ public class CheckpointItem : MonoBehaviour, IInventoryItem
 
     public void OnUse()
     {
-        Debug.Log("Item Checkpoint was used");
     }
 }
