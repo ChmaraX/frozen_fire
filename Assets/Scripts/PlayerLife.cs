@@ -18,20 +18,32 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Contains("Trap"))
+        string CollidingObjectTag = collision.gameObject.tag;
+        // if colliding object is of type Fire|Ice Trap -> collide regardless of side
+        if (CollidingObjectTag.Contains("FireTrap") || CollidingObjectTag.Contains("IceTrap"))
         {
-            if (itemCollector.collectedHPs > 0)
-            {
-                itemCollector.decreaseHPsBy(1);
-                Debug.Log("Life lost");
+            HandleCollision(collision);
+        } 
+        // if not Fire|Ice & Trap is collided on the side
+        else if (CollidingObjectTag.Contains("Trap") && collision.collider.GetType() == typeof(EdgeCollider2D)) 
+        {
+            HandleCollision(collision);
+        }
+    }
 
-                // return to last checkpoint
-                HandleCheckpoint();
-            }
-            else
-            {
-                Die();
-            }  
+    private void HandleCollision(Collision2D collision) 
+    {
+        if (itemCollector.collectedHPs > 0)
+        {
+            itemCollector.decreaseHPsBy(1);
+            Debug.Log("Life lost");
+
+            // return to last checkpoint
+            HandleCheckpoint();
+        }
+        else
+        {
+            Die();
         }
     }
 
