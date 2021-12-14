@@ -22,21 +22,22 @@ public class ItemCollector : MonoBehaviour
             return;
         }
 
-      
+
         if (item.Name == "Checkpoint")
         {
             lastCheckpointPos = collider.gameObject.transform.position;
         }
 
-        if (item.GetType().ToString() == "FireballItem3x")
-        {
-            // add +2 Fireball items to inv
-            inventory.AddItem(item);
-            inventory.AddItem(item);
-        }
+        string itemTypeString = item.GetType().ToString();
 
         if (item.IsStorable)
         {
+            if (itemTypeString[^2..] == "3x")
+            {
+                // add +2 of item to inv
+                inventory.AddItem(item);
+                inventory.AddItem(item);
+            }
             inventory.AddItem(item);
         }
 
