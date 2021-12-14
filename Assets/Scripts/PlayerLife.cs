@@ -8,7 +8,9 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private ItemCollector itemCollector;
     private PlayerMovement playerMovement;
+
     [SerializeField] GameObject respawnEffect;
+    [SerializeField] GameObject deathEffect;
 
     private void Start()
     {
@@ -50,12 +52,15 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(deathEffect,
+            new Vector3(
+                transform.position.x,
+                transform.position.y + 1,
+                transform.position.z),
+            Quaternion.identity);
 
-        rb.bodyType = RigidbodyType2D.Static;
-        // add trigger do death animation
-
-        Debug.Log("Player died");
-        RestartLevel();
+        playerMovement.moveSpeed = 0;
+        StartCoroutine(WaitAndRestart(1.5f));
     }
 
     private void RestartLevel()
@@ -79,14 +84,20 @@ public class PlayerLife : MonoBehaviour
             Quaternion.Euler(-90f, 0f, 0f));
 
         // wait for 2 seconds till player gets ready to continue
-        StartCoroutine(Wait(2));
+        StartCoroutine(WaitAndResume(2));
 
     }
 
-    private IEnumerator Wait(int secs)
+    private IEnumerator WaitAndResume(float secs)
     {
         yield return new WaitForSeconds(secs);
         // restore movement speed back to normal
         playerMovement.moveSpeed = 7f;
+    }
+
+    private IEnumerator WaitAndRestart(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        RestartLevel();
     }
 }

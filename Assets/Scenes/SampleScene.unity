@@ -3514,6 +3514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnEffect: {fileID: 100000, guid: cacd21c594bac46fea07f9498e7e996f, type: 3}
+  deathEffect: {fileID: 100004, guid: b787e5db7dd764483b7bfd6f5b0ec789, type: 3}
 --- !u!114 &1071219402
 MonoBehaviour:
   m_ObjectHideFlags: 0
