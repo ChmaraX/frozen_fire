@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] GameObject respawnEffect;
     [SerializeField] GameObject deathEffect;
+    [SerializeField] GameObject lifeLossEffect;
 
     private void Start()
     {
@@ -39,7 +40,6 @@ public class PlayerLife : MonoBehaviour
         if (itemCollector.collectedHPs > 0)
         {
             itemCollector.decreaseHPsBy(1);
-            Debug.Log("Life lost");
 
             // return to last checkpoint
             HandleCheckpoint();
@@ -75,6 +75,13 @@ public class PlayerLife : MonoBehaviour
         // move player to last checkpoint position
         transform.position = lastCheckpointPos;
         playerMovement.moveSpeed = 0;
+
+        Instantiate(lifeLossEffect,
+            new Vector3(
+                transform.position.x,
+                transform.position.y + 2,
+                transform.position.z),
+            Quaternion.identity);
 
         Instantiate(respawnEffect,
             new Vector3(
