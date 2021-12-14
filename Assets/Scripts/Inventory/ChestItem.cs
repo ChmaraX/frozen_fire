@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ChestItem : MonoBehaviour, IInventoryItem
 {
+    [SerializeField] GameObject openHpEffect;
+    [SerializeField] GameObject openCoinEffect;
 
     public string Name
     {
@@ -51,9 +53,12 @@ public class ChestItem : MonoBehaviour, IInventoryItem
             if (chance > 60)
             {
                 itemCollector.increaseHPsBy(2);
-            } else
+                Instantiate(openHpEffect, transform.position, Quaternion.identity);
+            }
+            else
             {
                 itemCollector.increaseCoinsBy(5);
+                Instantiate(openCoinEffect, transform.position, Quaternion.identity);
             }
 
             Animator anim = gameObject.GetComponent<Animator>();

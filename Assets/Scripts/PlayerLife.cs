@@ -9,6 +9,10 @@ public class PlayerLife : MonoBehaviour
     private ItemCollector itemCollector;
     private PlayerMovement playerMovement;
 
+    [SerializeField] GameObject respawnEffect;
+    [SerializeField] GameObject deathEffect;
+    [SerializeField] GameObject lifeLossEffect;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,20 +27,19 @@ public class PlayerLife : MonoBehaviour
         if (CollidingObjectTag.Contains("FireTrap") || CollidingObjectTag.Contains("IceTrap"))
         {
             HandleCollision(collision);
-        } 
+        }
         // if not Fire|Ice & Trap is collided on the side
-        else if (CollidingObjectTag.Contains("Trap") && collision.collider.GetType() == typeof(EdgeCollider2D)) 
+        else if (CollidingObjectTag.Contains("Trap") && collision.collider.GetType() == typeof(EdgeCollider2D))
         {
             HandleCollision(collision);
         }
     }
 
-    private void HandleCollision(Collision2D collision) 
+    private void HandleCollision(Collision2D collision)
     {
         if (itemCollector.collectedHPs > 0)
         {
             itemCollector.decreaseHPsBy(1);
-            Debug.Log("Life lost");
 
             // return to last checkpoint
             HandleCheckpoint();
@@ -49,12 +52,15 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(deathEffect,
+            new Vector3(
+                transform.position.x,
+                transform.position.y + 1,
+                transform.position.z),
+            Quaternion.identity);
 
-        rb.bodyType = RigidbodyType2D.Static;
-        // add trigger do death animation
-
-        Debug.Log("Player died");
-        RestartLevel();
+        playerMovement.moveSpeed = 0;
+        StartCoroutine(WaitAndRestart(1.5f));
     }
 
     private void RestartLevel()
@@ -70,15 +76,35 @@ public class PlayerLife : MonoBehaviour
         transform.position = lastCheckpointPos;
         playerMovement.moveSpeed = 0;
 
+        Instantiate(lifeLossEffect,
+            new Vector3(
+                transform.position.x,
+                transform.position.y + 2,
+                transform.position.z),
+            Quaternion.identity);
+
+        Instantiate(respawnEffect,
+            new Vector3(
+                transform.position.x,
+                transform.position.y - 1,
+                transform.position.z),
+            Quaternion.Euler(-90f, 0f, 0f));
+
         // wait for 2 seconds till player gets ready to continue
-        StartCoroutine(Wait(2));
+        StartCoroutine(WaitAndResume(2));
 
     }
 
-    private IEnumerator Wait(int secs)
+    private IEnumerator WaitAndResume(float secs)
     {
         yield return new WaitForSeconds(secs);
         // restore movement speed back to normal
         playerMovement.moveSpeed = 7f;
+    }
+
+    private IEnumerator WaitAndRestart(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        RestartLevel();
     }
 }

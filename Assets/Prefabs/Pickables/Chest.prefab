@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31bd57ada662462ebe168ced281d150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openHpEffect: {fileID: 100004, guid: cd1f25b830f9840caac4d8bce8732864, type: 3}
+  openCoinEffect: {fileID: 100006, guid: d5069880e34b344f98949ce8310fae81, type: 3}
   _Image: {fileID: 0}
 --- !u!95 &2993553210574486951
 Animator:
