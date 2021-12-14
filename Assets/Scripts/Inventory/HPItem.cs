@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class HPItem : MonoBehaviour, IInventoryItem
 {
+    [SerializeField] GameObject pickupEffect;
+
     public string Name
     {
         get
@@ -44,6 +46,9 @@ public class HPItem : MonoBehaviour, IInventoryItem
             ItemCollector itemCollector = collision.gameObject.GetComponent<ItemCollector>();
             itemCollector.increaseHPsBy(1);
             Destroy(gameObject);
+
+            Instantiate(pickupEffect, transform.position, Quaternion.identity);
+
         }
     }
 

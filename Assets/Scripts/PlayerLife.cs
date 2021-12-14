@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private ItemCollector itemCollector;
     private PlayerMovement playerMovement;
+    [SerializeField] GameObject respawnEffect;
 
     private void Start()
     {
@@ -23,15 +24,15 @@ public class PlayerLife : MonoBehaviour
         if (CollidingObjectTag.Contains("FireTrap") || CollidingObjectTag.Contains("IceTrap"))
         {
             HandleCollision(collision);
-        } 
+        }
         // if not Fire|Ice & Trap is collided on the side
-        else if (CollidingObjectTag.Contains("Trap") && collision.collider.GetType() == typeof(EdgeCollider2D)) 
+        else if (CollidingObjectTag.Contains("Trap") && collision.collider.GetType() == typeof(EdgeCollider2D))
         {
             HandleCollision(collision);
         }
     }
 
-    private void HandleCollision(Collision2D collision) 
+    private void HandleCollision(Collision2D collision)
     {
         if (itemCollector.collectedHPs > 0)
         {
@@ -69,6 +70,13 @@ public class PlayerLife : MonoBehaviour
         // move player to last checkpoint position
         transform.position = lastCheckpointPos;
         playerMovement.moveSpeed = 0;
+
+        Instantiate(respawnEffect,
+            new Vector3(
+                transform.position.x,
+                transform.position.y - 1,
+                transform.position.z),
+            Quaternion.Euler(-90f, 0f, 0f));
 
         // wait for 2 seconds till player gets ready to continue
         StartCoroutine(Wait(2));
