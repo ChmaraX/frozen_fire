@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireProjectile: {fileID: 2691614768734609400, guid: f6b5fe1a90ebb59449a3657dcc339233, type: 3}
   iceProjectile: {fileID: 2691614768734609400, guid: 5acc8637b9e8824448efa126d12a7e62, type: 3}
-  moveSpeed: 4
+  moveSpeed: 5.8
   jumpForce: 14
   crouchForce: 14
   crouchingSize: {x: 0, y: 0}
