@@ -19,6 +19,8 @@ public class HUD : MonoBehaviour
         Transform inventoryPanel = transform.Find("Inventory");
         int slotIndex = -1;
 
+        Debug.Log("Item added listner");
+
         foreach (Transform slot in inventoryPanel)
         {
             slotIndex++;

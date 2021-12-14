@@ -17,6 +17,8 @@ public class ItemCollector : MonoBehaviour
     {
         IInventoryItem item = collider.gameObject.GetComponent<IInventoryItem>();
 
+        Debug.Log(item);
+
         if (item == null)
         {
             return;

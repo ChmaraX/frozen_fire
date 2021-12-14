@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject playerPrefab;
+    private GameObject player;
+
+    private void Start()
+    {
+        player = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+    }
 
     void Update()
     {
         // focus camera on player and keep own Z position
-        transform.position = new Vector3(player.position.x, player.position.y * 0.25f, transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, -10);
     }
 }
