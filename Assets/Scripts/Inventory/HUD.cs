@@ -26,7 +26,7 @@ public class HUD : MonoBehaviour
 
     private void Inventory_CoinsAdded(object sender, int amount)
     {
-        Text coinsText = transform.Find("CoinsText").GetComponent<Text>();
+        Text coinsText = transform.Find("CoinCountBar").GetChild(1).GetComponent<Text>();
         coinsText.text = (Int32.Parse(coinsText.text) + amount).ToString();
     }
 
