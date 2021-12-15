@@ -37265,6 +37265,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4739809429469686514, guid: e33162501b36d754f84f7dab79fe4c88, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8278703032553131772, guid: e33162501b36d754f84f7dab79fe4c88, type: 3}
       propertyPath: m_Name
       value: PopupOverlay
