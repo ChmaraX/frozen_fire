@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3957546742316990831}
   - component: {fileID: 1436400734501598628}
   - component: {fileID: 6455744945489104886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.17, y: -2.92, z: -58.09321}
   m_LocalScale: {x: 3.1411, y: 3.1411, z: 3.1411}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
