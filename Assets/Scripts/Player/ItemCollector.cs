@@ -8,9 +8,6 @@ public class ItemCollector : MonoBehaviour
     public int collectedHPs = 0;
     public Vector3 lastCheckpointPos;
 
-    [SerializeField] private Text coinsText;
-    [SerializeField] private Text hpsText;
-
     public Inventory inventory;
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -28,18 +25,6 @@ public class ItemCollector : MonoBehaviour
             lastCheckpointPos = collider.gameObject.transform.position;
             return;
         }
-
-        //if (item.Name == "Coin")
-        //{
-        //    increaseCoinsBy(1);
-        //    return;
-        //}
-
-        //if (item.Name == "HP")
-        //{
-        //    increaseHPsBy(1);
-        //    return;
-        //}
 
         string itemTypeString = item.GetType().ToString();
 

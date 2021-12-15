@@ -5,11 +5,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
+
+    [SerializeField] Vector3 spawnPosition;
+
     private GameObject player;
 
     private void Start()
     {
-        player = Instantiate(playerPrefab, new Vector3(gameObject.transform.position.x - 3, gameObject.transform.position.y, 0), Quaternion.identity);
+        player = Instantiate(playerPrefab, new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z), Quaternion.identity);
     }
 
     void Update()
