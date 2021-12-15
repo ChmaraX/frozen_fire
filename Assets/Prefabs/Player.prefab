@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c010d16ac14e2c846a15036e2bbc2f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedHPs: 0
+  collectedCoins: 0
+  collectedHPs: 3
   lastCheckpointPos: {x: 0, y: 0, z: 0}
-  hpsText: {fileID: 511506553172666681, guid: a77b8a3949c444d4e9fd4b09437de6b6, type: 3}
   inventory: {fileID: 2838904710929107700, guid: 6908d42aa88194bb4ab5c48ba055b85e, type: 3}

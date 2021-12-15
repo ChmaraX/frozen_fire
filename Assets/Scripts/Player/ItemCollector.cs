@@ -10,6 +10,10 @@ public class ItemCollector : MonoBehaviour
 
     public Inventory inventory;
 
+    void Start() {
+        this.increaseHPsBy(3);
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         IInventoryItem item = collider.gameObject.GetComponent<IInventoryItem>();
