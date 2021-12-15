@@ -43,9 +43,4 @@ public class FireballItem3x : MonoBehaviour, IInventoryItem
             Destroy(gameObject);
         }
     }
-
-    public void OnUse()
-    {
-        Debug.Log("Item Fireball3x was used");
-    }
 }

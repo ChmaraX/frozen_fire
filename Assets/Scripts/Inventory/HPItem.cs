@@ -51,8 +51,4 @@ public class HPItem : MonoBehaviour, IInventoryItem
 
         }
     }
-
-    public void OnUse()
-    {
-    }
 }

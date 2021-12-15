@@ -43,9 +43,4 @@ public class IceballItem3x : MonoBehaviour, IInventoryItem
             Destroy(gameObject);
         }
     }
-
-    public void OnUse()
-    {
-        Debug.Log("Item Iceball3x was used");
-    }
 }

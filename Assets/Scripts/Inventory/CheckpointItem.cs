@@ -51,8 +51,4 @@ public class CheckpointItem : MonoBehaviour, IInventoryItem
             sprite.color = new Color(255, 255, 255, .5f);
         }
     }
-
-    public void OnUse()
-    {
-    }
 }

@@ -69,8 +69,4 @@ public class ChestItem : MonoBehaviour, IInventoryItem
             boxCollider2D.enabled = false;
         }
     }
-
-    public void OnUse()
-    {
-    }
 }

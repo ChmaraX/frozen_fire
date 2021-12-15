@@ -9,8 +9,6 @@ public interface IInventoryItem
 
     Sprite Image { get; }
 
-    void OnUse();
-
     InventorySlot Slot { get; set; }
 }
 

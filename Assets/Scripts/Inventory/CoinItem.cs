@@ -46,8 +46,4 @@ public class CoinItem : MonoBehaviour, IInventoryItem
             Destroy(gameObject);
         }
     }
-
-    public void OnUse()
-    {
-    }
 }
