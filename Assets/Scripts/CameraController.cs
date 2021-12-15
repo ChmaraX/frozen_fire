@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        player = Instantiate(playerPrefab, new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z), Quaternion.identity);
+        player = Instantiate(playerPrefab, new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z - 1), Quaternion.identity);
     }
 
     void Update()
