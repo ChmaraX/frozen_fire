@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.003171982, y: 0.0010154289, z: 18.494543}
   m_LocalScale: {x: 0.31835982, y: 0.31835982, z: 0.31835982}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 109848440119879538}
   - {fileID: 114952976770095494}
@@ -4782,6 +4783,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 2
@@ -4805,6 +4807,10 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!1 &113215146425229046
 GameObject:
@@ -4834,6 +4840,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 115392471403805406}
   m_RootOrder: 0
@@ -9519,6 +9526,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 2
@@ -9542,6 +9550,10 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!1 &114131961082210078
 GameObject:
@@ -9571,6 +9583,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 115392471403805406}
   m_RootOrder: 1
@@ -14256,6 +14269,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 2
@@ -14279,6 +14293,10 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!1 &7813690711475232315
 GameObject:
@@ -14309,6 +14327,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.204, y: -2.28, z: -58.09321}
   m_LocalScale: {x: 3.1411, y: 3.1411, z: 3.1411}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 115392471403805406}
   m_Father: {fileID: 0}
@@ -14404,3 +14423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177848e368b77ea4d81fd59052f7193c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupRef: {fileID: 8278703032553131772, guid: e33162501b36d754f84f7dab79fe4c88, type: 3}
+  popupTitleTextRef: {fileID: 5635237071173824764, guid: 438eea4f8be23604cafb8c301712a554, type: 3}
+  popupBodyTextRef: {fileID: 9217292358374586476, guid: c4efdcd07c06d8348901e194f23b5aaa, type: 3}
+  popupTitle: 
+  popupBody: 
