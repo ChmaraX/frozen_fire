@@ -20,7 +20,6 @@ public class InventorySlot
 
     public void AddItem(IInventoryItem item)
     {
-        Debug.Log("item added");
         item.Slot = this;
         mItemStack.Push(item);
     }

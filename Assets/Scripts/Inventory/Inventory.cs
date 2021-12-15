@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
     public IList<InventorySlot> mSlots = new List<InventorySlot>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
+    public event EventHandler<int> HpsAdded;
+    public event EventHandler<int> CoinsAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;
     public event EventHandler<InventoryEventArgs> ItemUsed;
 
@@ -50,6 +52,16 @@ public class Inventory : MonoBehaviour
         ItemUsed?.Invoke(this, new InventoryEventArgs(item));
         item.OnUse();
         RemoveItem(item);
+    }
+
+    public void AddCoins(int amount)
+    {
+        CoinsAdded?.Invoke(this, amount);
+    }
+
+    public void AddHps(int amount)
+    {
+        HpsAdded?.Invoke(this, amount);
     }
 
     public void AddItem(IInventoryItem item)

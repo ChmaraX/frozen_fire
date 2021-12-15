@@ -17,8 +17,6 @@ public class ItemCollector : MonoBehaviour
     {
         IInventoryItem item = collider.gameObject.GetComponent<IInventoryItem>();
 
-        Debug.Log(item);
-
         if (item == null)
         {
             return;
@@ -28,7 +26,20 @@ public class ItemCollector : MonoBehaviour
         if (item.Name == "Checkpoint")
         {
             lastCheckpointPos = collider.gameObject.transform.position;
+            return;
         }
+
+        //if (item.Name == "Coin")
+        //{
+        //    increaseCoinsBy(1);
+        //    return;
+        //}
+
+        //if (item.Name == "HP")
+        //{
+        //    increaseHPsBy(1);
+        //    return;
+        //}
 
         string itemTypeString = item.GetType().ToString();
 
@@ -48,25 +59,25 @@ public class ItemCollector : MonoBehaviour
     public void increaseHPsBy(int amount)
     {
         collectedHPs += amount;
-        hpsText.text = collectedHPs.ToString();
+        inventory.AddHps(amount);
     }
 
     public void decreaseHPsBy(int amount)
     {
         collectedHPs -= amount;
-        hpsText.text = collectedHPs.ToString();
+        inventory.AddHps(-amount);
     }
 
     public void increaseCoinsBy(int amount)
     {
         collectedCoins += amount;
-        coinsText.text = collectedCoins.ToString();
+        inventory.AddCoins(amount);
     }
 
     public void decreaseCoinsBy(int amount)
     {
         collectedCoins -= amount;
-        coinsText.text = collectedCoins.ToString();
+        inventory.AddCoins(-amount);
     }
 
 }

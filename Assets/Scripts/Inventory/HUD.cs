@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,14 +13,27 @@ public class HUD : MonoBehaviour
     {
         Inventory.ItemAdded += InventoryScript_ItemAdded;
         Inventory.ItemRemoved += Inventory_ItemRemoved;
+
+        Inventory.CoinsAdded += Inventory_CoinsAdded;
+        Inventory.HpsAdded += Inventory_HpsAdded;
+    }
+
+    private void Inventory_HpsAdded(object sender, int amount)
+    {
+        Text hpsText = transform.Find("HPBar").Find("HPCount").GetComponent<Text>();
+        hpsText.text = (Int32.Parse(hpsText.text) + amount).ToString();
+    }
+
+    private void Inventory_CoinsAdded(object sender, int amount)
+    {
+        Text coinsText = transform.Find("CoinsText").GetComponent<Text>();
+        coinsText.text = (Int32.Parse(coinsText.text) + amount).ToString();
     }
 
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("Inventory");
         int slotIndex = -1;
-
-        Debug.Log("Item added listner");
 
         foreach (Transform slot in inventoryPanel)
         {
