@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4630430131348961189}
   - component: {fileID: 3997707544452669340}
   - component: {fileID: 1331285124655672151}
+  - component: {fileID: 7104502158887269395}
   m_Layer: 0
   m_Name: LevelCompleteTrigger
   m_TagString: Untagged
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.0407825}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,8 +111,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.32, y: 2.4015646}
   m_EdgeRadius: 0
+--- !u!114 &7104502158887269395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813690711475232315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749bf86c6c39d354894db2a8c1c79520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCompleteWindow: {fileID: 8278703032553131772, guid: d77f1c37c71dbbb4b85e5b8c472255d9, type: 3}
+  pauseMenu: {fileID: 6480823087266416357, guid: a3abf2d6150c6dd4da63b293999953fb, type: 3}
 --- !u!1001 &6551428278193808528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,8 +203,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
+      propertyPath: lengthInSec
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
       propertyPath: startDelay.scalar
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.06132078
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.8072356
       objectReference: {fileID: 0}
     - target: {fileID: 19800008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
       propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].value

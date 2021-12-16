@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
             } 
             else 
             {
-                PauseGame();
+                PauseGameAndShowPauseMenu();
             }
         }    
     }
@@ -36,14 +36,18 @@ public class PauseMenu : MonoBehaviour
         pauseMenuRef.SetActive(false);
         Time.timeScale = 1f;
         ToggleGamePaused();
-        
     }
 
-    void PauseGame() 
+    public void PauseGame()
     {
-        pauseMenuRef.SetActive(true);
         Time.timeScale = 0f;
         ToggleGamePaused();
+    }
+
+    void PauseGameAndShowPauseMenu() 
+    {
+        pauseMenuRef.SetActive(true);
+        this.PauseGame();
     }
 
     void ToggleGamePaused()

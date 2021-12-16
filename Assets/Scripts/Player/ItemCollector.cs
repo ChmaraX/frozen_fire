@@ -6,6 +6,7 @@ public class ItemCollector : MonoBehaviour
 
     public int collectedCoins = 0;
     public int collectedHPs = 0;
+    public int deathCount = 0;
     public Vector3 lastCheckpointPos;
 
     public Inventory inventory;
@@ -53,6 +54,11 @@ public class ItemCollector : MonoBehaviour
 
     public void decreaseHPsBy(int amount)
     {
+        deathCount++;
+        if (collectedHPs == 0) 
+        {
+            //GAME OVER GO DIE MAIN MENU
+        }
         collectedHPs -= amount;
         inventory.AddHps(-amount);
     }
