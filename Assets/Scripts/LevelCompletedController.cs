@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class LevelCompletedController : MonoBehaviour
 {
 
-    public GameObject levelCompleteModalRef;
-
     public Text coinsText;
     public Text deathsText;
 
@@ -24,8 +22,8 @@ public class LevelCompletedController : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    public void ReturnToMenu() {
-        SceneManager.LoadScene("MainMenu");
+    public void ReturnToLevelSelect() {
+        SceneManager.LoadScene("LevelSelect");
     }
 
 }
