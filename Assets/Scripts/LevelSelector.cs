@@ -9,15 +9,14 @@ public class LevelSelector : MonoBehaviour
 
     void Start() 
     {
-        int levelReached = PlayerPrefs.GetInt("LastReachedLevel", 1);
+        int lastUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel", 1) ;
 
         for (int i = 0; i < levelEntries.Length; i++) 
         {
-            Debug.Log(levelEntries[i]);
-            
-            if (i+1 > levelReached) 
+            //unlock levels that are only one above last completed level
+            if (i+1 > lastUnlockedLevel) 
             {
-             levelEntries[i].interactable = false;
+                levelEntries[i].interactable = false;
             }
         }
     }
