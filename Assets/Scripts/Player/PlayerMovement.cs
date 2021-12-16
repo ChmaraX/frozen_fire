@@ -61,10 +61,10 @@ public class PlayerMovement : MonoBehaviour
         switch (item.Name)
         {
             case "Fireball":
-                Instantiate(fireProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
+                Instantiate(fireProjectile, new Vector3(transform.position.x + 1, transform.position.y, -1), transform.rotation);
                 break;
             case "Iceball":
-                Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
+                Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, -1), transform.rotation);
                 break;
             default: break;
         }
@@ -111,13 +111,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-        //    // "+ 1" is offset from which to shoot, we need only to right
-        //    // TODO: separate to variable or dynamically to end of a gun or hand or something
-        //    Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, 0), transform.rotation);
-        //}
-
         UpdateAnimationState();
     }
 
@@ -137,11 +130,6 @@ public class PlayerMovement : MonoBehaviour
             // state = MovementState.running;
             spriteRenderer.flipX = true;
         }
-        //TODO state when not moving probably not needed -> remove
-        // else
-        // {
-        //     state = MovementState.idle;
-        // }
 
         // slide-crouch
         if (isCrouching)

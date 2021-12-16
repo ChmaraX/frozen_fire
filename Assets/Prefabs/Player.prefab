@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireProjectile: {fileID: 2691614768734609400, guid: f6b5fe1a90ebb59449a3657dcc339233, type: 3}
   iceProjectile: {fileID: 2691614768734609400, guid: 5acc8637b9e8824448efa126d12a7e62, type: 3}
-  moveSpeed: 5.8
+  moveSpeed: 7
   jumpForce: 14
   crouchForce: 14
   crouchingSize: {x: 0, y: 0}
@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedCoins: 0
-  collectedHPs: 3
+  collectedHPs: 0
+  deathCount: 0
   lastCheckpointPos: {x: 0, y: 0, z: 0}
   inventory: {fileID: 2838904710929107700, guid: 6908d42aa88194bb4ab5c48ba055b85e, type: 3}

@@ -20,6 +20,12 @@ public class CameraController : MonoBehaviour
 
         // focus camera on player and keep own Z position
         float y_pos = 0.3f * player.transform.position.y;
+
+        if (player.transform.position.y < -5)
+        {
+            y_pos = player.transform.position.y;
+        }
+
         Vector3 target = new Vector3(player.transform.position.x, y_pos + 1, -10);
         transform.position = target;
     }
