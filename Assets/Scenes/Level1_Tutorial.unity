@@ -269,6 +269,10 @@ PrefabInstance:
       value: Coins
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -15948,6 +15952,10 @@ PrefabInstance:
       value: Fire and ice obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -16985,6 +16993,10 @@ PrefabInstance:
       value: Destroying ice traps
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -17424,6 +17436,10 @@ PrefabInstance:
       value: Chests
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -17577,6 +17593,10 @@ PrefabInstance:
       propertyPath: popupTitle
       value: Destroying ice traps
       objectReference: {fileID: 0}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
@@ -33545,6 +33565,10 @@ PrefabInstance:
       value: That's it!
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -33770,6 +33794,10 @@ PrefabInstance:
       propertyPath: popupTitle
       value: Destroying fire traps
       objectReference: {fileID: 0}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
@@ -35081,6 +35109,10 @@ PrefabInstance:
       value: Checkpoints
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -35520,6 +35552,10 @@ PrefabInstance:
       propertyPath: popupTitle
       value: Dodge objectives
       objectReference: {fileID: 0}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
@@ -36450,6 +36486,10 @@ PrefabInstance:
       value: Inventory
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -36765,6 +36805,10 @@ PrefabInstance:
       value: Health Pickups
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -37061,6 +37105,10 @@ PrefabInstance:
       value: Dodge objectives
       objectReference: {fileID: 0}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
       objectReference: {fileID: 1876467501}
@@ -37154,6 +37202,10 @@ PrefabInstance:
       propertyPath: popupTitle
       value: Destroying fire traps
       objectReference: {fileID: 0}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 
@@ -38620,6 +38672,10 @@ PrefabInstance:
       propertyPath: popupTitle
       value: Welcome to FrozenFire!
       objectReference: {fileID: 0}
+    - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
+      propertyPath: popupOverlay
+      value: 
+      objectReference: {fileID: 1207788455}
     - target: {fileID: 8864673234285283937, guid: 56a40e8264268f540888a21a24163e1e, type: 3}
       propertyPath: popupBodyTextRef
       value: 

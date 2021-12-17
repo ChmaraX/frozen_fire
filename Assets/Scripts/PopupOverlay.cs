@@ -11,11 +11,22 @@ public class PopupOverlay : MonoBehaviour
 
     public Text bodyTitleTextRef;
 
-    public void SetPopupInactive() 
+    public void Show(string title, string body) {
+        this.popupTitleTextRef.text = title;
+        this.bodyTitleTextRef.text = body;
+        this.SetPopupActive();
+    }
+
+    public void SetPopupActive() 
+    {
+        gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+      public void SetPopupInactive() 
     {
         gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
-
     
 }
