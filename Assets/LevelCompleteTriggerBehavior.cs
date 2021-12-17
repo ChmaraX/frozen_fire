@@ -12,8 +12,7 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
         //find out if player
         if (collider.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("lastUnlockedLevel", levelToUnlock);
-            PlayerPrefs.Save();
+            this.UnlockNewLevel();
             ItemCollector itemCollector = collider.gameObject.GetComponent<ItemCollector>();
             collider.gameObject
                 .GetComponent<Rigidbody2D>()
@@ -23,6 +22,16 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
                     .SetValuesAndOpenWindow(itemCollector.collectedCoins, itemCollector.deathCount);
                     
         }
+    }
+
+    private void UnlockNewLevel() 
+    {
+        int savedUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel");
+        if (savedUnlockedLevel < levelToUnlock) 
+        {
+             PlayerPrefs.SetInt("lastUnlockedLevel", levelToUnlock);
+            PlayerPrefs.Save();
+        } 
     }
 
 }
