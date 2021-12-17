@@ -4,12 +4,9 @@ using TMPro;
 public class LevelSelectEntry : MonoBehaviour
 {
     public TextMeshProUGUI coinsText;
-
     public TextMeshProUGUI deathsText;
     public TextMeshProUGUI levelNumberText;
-
     public int levelNumber;
-
 
     public void SetLevelData(int coins, int deaths) 
     {

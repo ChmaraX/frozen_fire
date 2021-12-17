@@ -11,9 +11,6 @@ public class LevelSelector : MonoBehaviour
     {
         int lastUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel", 1) ;
         
-        // Debug.Log(levelEntries[i].GetComponentsInChildren<Text>());
-
-        // levelEntries = new Button[transform.childCount];
         for (int i = 0; i < levelEntries.Length; i++) 
         {
             int levelNumber = i+1;
@@ -22,7 +19,7 @@ public class LevelSelector : MonoBehaviour
             levelEntries[i].GetComponentInChildren<LevelSelectEntry>().SetLevelData(coins, deaths);
             
             //unlock levels that are only one above last completed level
-            if (i+1 > lastUnlockedLevel) 
+            if (levelNumber > lastUnlockedLevel) 
             {
                 levelEntries[i].interactable = false;
             }
