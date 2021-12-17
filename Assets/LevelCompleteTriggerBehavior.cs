@@ -10,6 +10,7 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
         //find out if player
         if (collider.gameObject.CompareTag("Player"))
         {
+            SoundManagerScript.PlaySound("victory");
             ItemCollector itemCollector = collider.gameObject.GetComponent<ItemCollector>();
             this.SaveProgress(itemCollector);
             collider.gameObject

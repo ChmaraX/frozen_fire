@@ -46,6 +46,8 @@ public class CheckpointItem : MonoBehaviour, IInventoryItem
             BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
             boxCollider2D.enabled = false;
 
+            SoundManagerScript.PlaySound("checkpointPick");
+
             // change opacity to 0.5 to indicate it was already taken
             SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer>();
             sprite.color = new Color(255, 255, 255, .5f);

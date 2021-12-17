@@ -48,7 +48,7 @@ public class HPItem : MonoBehaviour, IInventoryItem
             Destroy(gameObject);
 
             Instantiate(pickupEffect, transform.position, Quaternion.identity);
-
+            SoundManagerScript.PlaySound("itemPick");
         }
     }
 }

@@ -35,6 +35,7 @@ public class ItemCollector : MonoBehaviour
 
         if (item.IsStorable)
         {
+
             if (itemTypeString[^2..] == "3x")
             {
                 // add +2 of item to inv
@@ -42,6 +43,7 @@ public class ItemCollector : MonoBehaviour
                 inventory.AddItem(item);
             }
             inventory.AddItem(item);
+            SoundManagerScript.PlaySound("itemPick");
         }
 
     }

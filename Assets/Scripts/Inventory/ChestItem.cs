@@ -64,6 +64,8 @@ public class ChestItem : MonoBehaviour, IInventoryItem
             Animator anim = gameObject.GetComponent<Animator>();
             anim.SetBool("isOpen", true);
 
+            SoundManagerScript.PlaySound("chestOpen");
+
             // prevent chest from being picked again
             BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
             boxCollider2D.enabled = false;

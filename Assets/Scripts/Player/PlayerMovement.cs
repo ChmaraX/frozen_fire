@@ -62,9 +62,11 @@ public class PlayerMovement : MonoBehaviour
         {
             case "Fireball":
                 Instantiate(fireProjectile, new Vector3(transform.position.x + 1, transform.position.y, -1), transform.rotation);
+                SoundManagerScript.PlaySound("playerFire");
                 break;
             case "Iceball":
                 Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, -1), transform.rotation);
+                SoundManagerScript.PlaySound("playerFire");
                 break;
             default: break;
         }
@@ -159,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        SoundManagerScript.PlaySound("playerJump");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 

@@ -43,6 +43,7 @@ public class CoinItem : MonoBehaviour, IInventoryItem
         {
             ItemCollector itemCollector = collision.gameObject.GetComponent<ItemCollector>();
             itemCollector.increaseCoinsBy(1);
+            SoundManagerScript.PlaySound("itemPick");
             Destroy(gameObject);
         }
     }

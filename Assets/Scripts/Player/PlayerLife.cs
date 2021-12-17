@@ -59,6 +59,8 @@ public class PlayerLife : MonoBehaviour
                 transform.position.z),
             Quaternion.identity);
 
+        SoundManagerScript.PlaySound("playerDeath");
+
         playerMovement.moveSpeed = 0;
         StartCoroutine(WaitAndRestart(1.5f));
     }
@@ -89,6 +91,8 @@ public class PlayerLife : MonoBehaviour
                 transform.position.y - 1,
                 transform.position.z),
             Quaternion.Euler(-90f, 0f, 0f));
+
+        SoundManagerScript.PlaySound("respawn");
 
         // wait for 2 seconds till player gets ready to continue
         StartCoroutine(WaitAndResume(2));
