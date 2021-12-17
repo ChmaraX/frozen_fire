@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8278703032553131772}
+      - m_Target: {fileID: 3893265590378215637}
         m_TargetAssemblyTypeName: PopupOverlay, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: SetPopupInactive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
