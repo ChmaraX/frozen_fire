@@ -15744,6 +15744,68 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: -0.15}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1001 &63118372
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 305638394}
+    m_Modifications:
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.790366
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407823202791460970, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+      propertyPath: m_Name
+      value: IndestructibleWoodenBox (14)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+--- !u!4 &63118373 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3840922409456021948, guid: 8946f89ae1c9cbb47811b64f3c2f0245, type: 3}
+  m_PrefabInstance: {fileID: 63118372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &96819978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17184,6 +17246,7 @@ Transform:
   - {fileID: 1060514869}
   - {fileID: 2004841696}
   - {fileID: 698577613}
+  - {fileID: 63118373}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
