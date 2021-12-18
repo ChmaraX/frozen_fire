@@ -20743,7 +20743,7 @@ RectTransform:
   m_Children:
   - {fileID: 1886674110}
   m_Father: {fileID: 2046184904}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23018,6 +23018,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1331285124655672151, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331285124655672151, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4630430131348961189, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -23061,6 +23069,10 @@ PrefabInstance:
     - target: {fileID: 4630430131348961189, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104502158887269395, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
+      propertyPath: levelToUnlock
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7813690711475232315, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
       propertyPath: m_Name
@@ -25491,6 +25503,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 925631281534049817, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 925631281534049818, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -25522,6 +25538,18 @@ PrefabInstance:
     - target: {fileID: 2672262495194104200, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491294752741850869, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491294752741850869, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610687270524205590, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6422547912342101929, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_IsActive
@@ -25673,7 +25701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7417483556475265922, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7417483556804138605, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_AnchorMax.y
