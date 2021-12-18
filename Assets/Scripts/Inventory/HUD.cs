@@ -111,8 +111,15 @@ public class HUD : MonoBehaviour
 
         foreach (Transform slot in inventoryPanel)
         {
+            Image image = slot.GetChild(0).GetComponent<Image>();
             ItemClickHandler itemClickHandler = slot.GetChild(0).GetComponent<ItemClickHandler>();
+            Text stackCountText = slot.GetChild(1).GetComponent<Text>();
+
+            stackCountText.text = "";
+            image.enabled = false;
+            image.sprite = null;
             itemClickHandler.Item = null;
+
         }
     }
 
