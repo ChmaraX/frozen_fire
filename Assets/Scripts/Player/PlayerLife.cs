@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
     public ItemCollector itemCollector;
-    private Rigidbody2D rb;
     private PlayerMovement playerMovement;
     private GameObject levelEnd;
 
@@ -16,7 +14,6 @@ public class PlayerLife : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         itemCollector = GetComponent<ItemCollector>();
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -68,14 +65,12 @@ public class PlayerLife : MonoBehaviour
         levelEnd.GetComponent<LevelEndController>().ShowGameOver(this);
     }
 
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     public void HandleCheckpoint()
     {
         Vector3 lastCheckpointPos = itemCollector.lastCheckpointPos;
+
+        // replace inventory with most recent item snapshot
+        ReplaceInventoryWithSnapshot();
 
         // move player to last checkpoint position
         transform.position = lastCheckpointPos;
@@ -102,16 +97,24 @@ public class PlayerLife : MonoBehaviour
 
     }
 
+    private void ReplaceInventoryWithSnapshot()
+    {
+        List<IInventoryItem> itemsSnap = itemCollector.itemsSnap;
+        itemCollector.inventory.ClearInventory();
+
+        foreach (IInventoryItem item in itemsSnap)
+        {
+            itemCollector.inventory.AddItem(item);
+        }
+
+        // reset snapshot
+        itemCollector.itemsSnap = new List<IInventoryItem>();
+    }
+
     private IEnumerator WaitAndResume(float secs)
     {
         yield return new WaitForSeconds(secs);
         // restore movement speed back to normal
         playerMovement.moveSpeed = 7f;
-    }
-
-    private IEnumerator WaitAndRestart(float secs)
-    {
-        yield return new WaitForSeconds(secs);
-        RestartLevel();
     }
 }

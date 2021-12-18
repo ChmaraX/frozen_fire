@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ItemCollector : MonoBehaviour
 {
@@ -9,10 +9,14 @@ public class ItemCollector : MonoBehaviour
     public int deathCount = 0;
     public Vector3 lastCheckpointPos;
 
+    public List<IInventoryItem> itemsSnap;
+
     public Inventory inventory;
 
     void Start() {
         this.increaseHPsBy(3);
+
+        itemsSnap = new List<IInventoryItem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -41,8 +45,15 @@ public class ItemCollector : MonoBehaviour
                 // add +2 of item to inv
                 inventory.AddItem(item);
                 inventory.AddItem(item);
+
+                itemsSnap.Add(item);
+                itemsSnap.Add(item);
             }
             inventory.AddItem(item);
+
+            // update snapshot after each item
+            itemsSnap.Add(item);
+
             SoundManagerScript.PlaySound("itemPick");
         }
 

@@ -23,6 +23,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void ClearInventory()
+    {
+        mSlots = new List<InventorySlot>();
+
+        for (int i = 0; i < SLOTS; i++)
+        {
+            mSlots.Add(new InventorySlot(i));
+        }
+    }
+
     private InventorySlot FindStackableSlot(IInventoryItem item)
     {
         foreach (InventorySlot slot in mSlots)

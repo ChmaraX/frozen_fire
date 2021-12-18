@@ -36,7 +36,7 @@ public class SpeedUpItem : MonoBehaviour, IInventoryItem
         }
     }
 
-    public bool IsStorable => false;
+    public bool IsStorable => true;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,7 +44,7 @@ public class SpeedUpItem : MonoBehaviour, IInventoryItem
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-            playerMovement.moveSpeed = 16f;
+            playerMovement.moveSpeed = 14f;
 
             Destroy(gameObject);
 
