@@ -61,6 +61,9 @@ public class SoundManagerScript : MonoBehaviour
             case "victory":
                 audioSrc.PlayOneShot(victorySound);
                 break;
+            case "popupPickupSound":
+                audioSrc.PlayOneShot(popupPickupSound);
+                break;
 
         }
     }
