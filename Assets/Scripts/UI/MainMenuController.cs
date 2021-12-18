@@ -7,7 +7,8 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayFirstAvailableLevel()
 	{
-		SceneManager.LoadScene("Level1_Tutorial");
+		int lastUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel", 1);
+		SceneManager.LoadScene("Level_" + lastUnlockedLevel);
 	}
 
 	public void OpenLevelSelect() 

@@ -421,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 617199348}
     - target: {fileID: 1437536379407333861, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
       propertyPath: sceneName
-      value: SampleScene
+      value: Level_2
       objectReference: {fileID: 0}
     - target: {fileID: 1437536379407333861, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
       propertyPath: deathsText
@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 1906874308}
     - target: {fileID: 7716459369986204115, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: SampleScene
+      value: Level_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
@@ -626,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 163759568}
     - target: {fileID: 1437536379407333861, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
       propertyPath: sceneName
-      value: Level1_Tutorial
+      value: Level_1
       objectReference: {fileID: 0}
     - target: {fileID: 1437536379407333861, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
       propertyPath: deathsText
@@ -730,7 +730,7 @@ PrefabInstance:
       objectReference: {fileID: 1906874308}
     - target: {fileID: 7716459369986204115, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level1_Tutorial
+      value: Level_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066de0c6b6a33504dac6d3dc5b2cc860, type: 3}
