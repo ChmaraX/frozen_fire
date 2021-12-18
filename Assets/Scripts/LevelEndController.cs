@@ -12,7 +12,9 @@ public class LevelEndController : MonoBehaviour
 
     private PlayerLife playerLife;
 
-    public int currentLifeBuyout { get; private set; } = 1;
+    public int currentLifeBuyout { get; private set; } = 2;
+
+    private int buyoutIncrement = 3;
 
     public void ShowGameOver(PlayerLife playerLife)
     {
@@ -41,7 +43,7 @@ public class LevelEndController : MonoBehaviour
     {
         itemCollector.decreaseCoinsBy(currentLifeBuyout);
         itemCollector.increaseHPsBy(1);
-        currentLifeBuyout += 3;
+        currentLifeBuyout += buyoutIncrement;
         this.CloseWindow();
         this.playerLife.HandleCheckpoint();
     }
