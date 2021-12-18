@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     public event EventHandler<int> CoinsAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;
     public event EventHandler<InventoryEventArgs> ItemUsed;
+    public event EventHandler InvCleared;
 
     public Inventory()
     {
@@ -31,6 +32,8 @@ public class Inventory : MonoBehaviour
         {
             mSlots.Add(new InventorySlot(i));
         }
+
+        InvCleared?.Invoke(this, null);
     }
 
     private InventorySlot FindStackableSlot(IInventoryItem item)

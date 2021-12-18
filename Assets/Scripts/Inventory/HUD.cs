@@ -16,6 +16,8 @@ public class HUD : MonoBehaviour
 
         Inventory.CoinsAdded += Inventory_CoinsAdded;
         Inventory.HpsAdded += Inventory_HpsAdded;
+
+        Inventory.InvCleared += Inventory_InvCleared;
     }
 
     private void Inventory_HpsAdded(object sender, int amount)
@@ -102,4 +104,16 @@ public class HUD : MonoBehaviour
             }
         }
     }
+
+    private void Inventory_InvCleared(object sender, EventArgs e)
+    {
+        Transform inventoryPanel = transform.Find("Inventory");
+
+        foreach (Transform slot in inventoryPanel)
+        {
+            ItemClickHandler itemClickHandler = slot.GetChild(0).GetComponent<ItemClickHandler>();
+            itemClickHandler.Item = null;
+        }
+    }
+
 }
