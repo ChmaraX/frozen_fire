@@ -70,7 +70,12 @@ public class LevelEndController : MonoBehaviour
     private void EnableBuyoutButton() 
     {
         buyoutButton.gameObject.SetActive(true);
-        buyoutButton.interactable = playerLife.itemCollector.collectedCoins >= currentLifeBuyout;
+        bool isInteractable = playerLife.itemCollector.collectedCoins >= currentLifeBuyout;
+        buyoutButton.interactable = isInteractable;
+        if (!isInteractable) 
+        {
+            SoundManagerScript.PlaySound("gameOver");
+        }
         buyoutButton.GetComponentInChildren<Text>().text = "Buy another life (" + currentLifeBuyout + " coins)";
     }
 

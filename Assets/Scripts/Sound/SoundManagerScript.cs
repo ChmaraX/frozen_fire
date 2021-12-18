@@ -12,7 +12,8 @@ public class SoundManagerScript : MonoBehaviour
         playerDeathSound,
         victorySound,
         itemPickSound,
-        popupPickupSound;
+        popupPickupSound,
+        gameOver;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class SoundManagerScript : MonoBehaviour
         chestOpenSound = Resources.Load<AudioClip>("chestOpenSound");
         checkpointPickSound = Resources.Load<AudioClip>("checkpointPickSound");
         popupPickupSound = Resources.Load<AudioClip>("popupPickupSound");
+        gameOver = Resources.Load<AudioClip>("gameOver");
         
         audioSrc = GetComponent<AudioSource>();
     }
@@ -63,6 +65,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "popupPickupSound":
                 audioSrc.PlayOneShot(popupPickupSound);
+                break;
+            case "gameOver" :
+                audioSrc.PlayOneShot(gameOver);
                 break;
 
         }
