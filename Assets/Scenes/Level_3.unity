@@ -118095,7 +118095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104502158887269395, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
       propertyPath: levelToUnlock
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7104502158887269395, guid: dda44b64507d7894ca2702254dc0ccb6, type: 3}
       propertyPath: levelCompleteWindow
