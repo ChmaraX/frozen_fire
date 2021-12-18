@@ -37513,6 +37513,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3491294752741850869, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491294752741850869, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4610687270524205590, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_Name
       value: LevelEnd

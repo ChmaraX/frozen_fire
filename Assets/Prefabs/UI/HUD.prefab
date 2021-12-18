@@ -3033,6 +3033,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9037665876460505631, guid: d77f1c37c71dbbb4b85e5b8c472255d9, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037665876460505631, guid: d77f1c37c71dbbb4b85e5b8c472255d9, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037665876460505631, guid: d77f1c37c71dbbb4b85e5b8c472255d9, type: 3}
       propertyPath: m_BlocksRaycasts
       value: 0
       objectReference: {fileID: 0}

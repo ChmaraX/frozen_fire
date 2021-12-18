@@ -11,6 +11,7 @@ public class PopupWindowLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        SoundManagerScript.PlaySound("popupPickupSound");
         popupOverlay.Show(popupTitle, popupBody);
         Destroy(gameObject);
     }
