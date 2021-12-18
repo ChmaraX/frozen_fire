@@ -70,7 +70,11 @@ public class PlayerLife : MonoBehaviour
 
     public void HandleCheckpoint()
     {
-        Vector3 lastCheckpointPos = itemCollector.lastCheckpointPos;
+        Vector3 lastCheckpointPos = new(
+            itemCollector.lastCheckpointPos.x,
+            itemCollector.lastCheckpointPos.y,
+            itemCollector.lastCheckpointPos.z - 0.1f
+        );
 
         // replace inventory with most recent item snapshot
         ReplaceInventoryWithSnapshot();
