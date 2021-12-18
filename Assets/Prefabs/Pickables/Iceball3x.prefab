@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898e0b1f98df4d8e9ff91d676de634e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iceProjectile: {fileID: 2691614768734609400, guid: 5acc8637b9e8824448efa126d12a7e62, type: 3}
   _Image: {fileID: 21300000, guid: 26d37d580abb04e03ad8447cea125274, type: 3}

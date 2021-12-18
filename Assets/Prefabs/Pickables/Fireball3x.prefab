@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28a920edc3474ed4a12cb4f7872fe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireProjectile: {fileID: 2691614768734609400, guid: f6b5fe1a90ebb59449a3657dcc339233, type: 3}
   _Image: {fileID: 21300000, guid: 92e63710c87174ee18c65cdc08ede7c2, type: 3}

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,12 +6,6 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-
-    // TODO: separate projectile from PlayerMovement
-    // create general Character controlls class
-    // which includes movements, projectile etc.
-    public FireProjectileBehaviour fireProjectile;
-    public IceProjectileBehaviour iceProjectile;
 
     private float dirX = 1.0f;
     [SerializeField] public float moveSpeed = 7f;
@@ -47,29 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
         crouchingSize = new Vector2(standingSize.x, standingSize.y * 0.5f);
         crouchingOffset = new Vector2(crouchingOffset.x, -1);
-
-        inventory.ItemUsed += Inventory_ItemUsed;
-
-    }
-
-    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
-    {
-        IInventoryItem item = e.Item;
-        Debug.Log(item.Name + "used");
-
-        // Projectiles are depended on player position thats why they are here
-        switch (item.Name)
-        {
-            case "Fireball":
-                Instantiate(fireProjectile, new Vector3(transform.position.x + 1, transform.position.y, -1), transform.rotation);
-                SoundManagerScript.PlaySound("playerFire");
-                break;
-            case "Iceball":
-                Instantiate(iceProjectile, new Vector3(transform.position.x + 1, transform.position.y, -1), transform.rotation);
-                SoundManagerScript.PlaySound("playerFire");
-                break;
-            default: break;
-        }
     }
 
     // Update is called once per frame
