@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class LevelCompleteTriggerBehavior : MonoBehaviour
 {
     
-    public GameObject levelCompleteWindow;
     public int levelToUnlock;
 
     private int totalCoinsInLevel;
@@ -27,6 +26,8 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
                 .GetComponent<Rigidbody2D>()
                 .constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
             itemCollector.collectedCoins = LimitCollectedCoins(itemCollector.collectedCoins);
+            
+            GameObject levelCompleteWindow = GameObject.FindWithTag("LevelEnd");
             levelCompleteWindow.GetComponent<LevelEndController>()
                     .ShowLevelCompleted(collider.gameObject.GetComponent<PlayerLife>());
                     
