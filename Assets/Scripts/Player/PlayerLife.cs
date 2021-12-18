@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    public ItemCollector itemCollector;
     private Rigidbody2D rb;
-    private ItemCollector itemCollector;
     private PlayerMovement playerMovement;
+    private GameObject levelEnd;
 
     [SerializeField] GameObject respawnEffect;
     [SerializeField] GameObject deathEffect;
@@ -40,6 +41,7 @@ public class PlayerLife : MonoBehaviour
         if (itemCollector.collectedHPs > 0)
         {
             itemCollector.decreaseHPsBy(1);
+            Debug.Log(itemCollector.collectedHPs);
 
             // return to last checkpoint
             HandleCheckpoint();
@@ -62,7 +64,14 @@ public class PlayerLife : MonoBehaviour
         SoundManagerScript.PlaySound("playerDeath");
 
         playerMovement.moveSpeed = 0;
-        StartCoroutine(WaitAndRestart(1.5f));
+
+        // GameObject levelEndTest = GUIRef.FindObject("LevelEnd");
+ 
+        // levelEnd.SetActive(true);
+        levelEnd = GameObject.FindWithTag("LevelEnd");
+        levelEnd.GetComponent<LevelEndController>().ShowLevelEnd(this, true);
+        //display popup, enable buyout if coins > threshold
+        // StartCoroutine(WaitAndRestart(1.5f));
     }
 
     private void RestartLevel()
@@ -70,7 +79,7 @@ public class PlayerLife : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void HandleCheckpoint()
+    public void HandleCheckpoint()
     {
         Vector3 lastCheckpointPos = itemCollector.lastCheckpointPos;
 

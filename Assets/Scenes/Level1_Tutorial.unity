@@ -37478,6 +37478,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 925631281534049816, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1391116837273317501, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -37505,6 +37509,18 @@ PrefabInstance:
     - target: {fileID: 2672262495194104200, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610687270524205590, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_Name
+      value: LevelEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610687270524205590, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610687270524205590, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
+      propertyPath: m_TagString
+      value: LevelEnd
       objectReference: {fileID: 0}
     - target: {fileID: 6422547912342101929, guid: 7fdcbe1f26ce14de49073cd006746f88, type: 3}
       propertyPath: m_IsActive
