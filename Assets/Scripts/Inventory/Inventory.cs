@@ -60,6 +60,12 @@ public class Inventory : MonoBehaviour
     internal void UseItem(IInventoryItem item)
     {
         ItemUsed?.Invoke(this, new InventoryEventArgs(item));
+
+        if (item.hasOnUse)
+        {
+            item.OnUse();
+        }
+
         RemoveItem(item);
     }
 

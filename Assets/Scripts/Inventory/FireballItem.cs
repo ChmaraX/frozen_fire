@@ -37,6 +37,8 @@ public class FireballItem : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => true;
 
+    public bool hasOnUse => false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -44,5 +46,10 @@ public class FireballItem : MonoBehaviour, IInventoryItem
         {
             Destroy(gameObject);
         }
+    }
+
+    public void OnUse()
+    {
+        throw new System.NotImplementedException();
     }
 }

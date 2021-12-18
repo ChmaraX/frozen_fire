@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 5943801969627369564, guid: 4abd15a5a76f1bd469a96001f5178e18, type: 3}
-  _Image: {fileID: 0}
+  _Image: {fileID: 21300000, guid: cf6e21e75c3e34f3db0da087bf882101, type: 3}

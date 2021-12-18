@@ -37,6 +37,8 @@ public class CheckpointItem : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => false;
 
+    public bool hasOnUse => false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -52,5 +54,10 @@ public class CheckpointItem : MonoBehaviour, IInventoryItem
             SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer>();
             sprite.color = new Color(255, 255, 255, .5f);
         }
+    }
+
+    public void OnUse()
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -36,11 +36,18 @@ public class FireballItem3x : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => true;
 
+    public bool hasOnUse => false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
+    }
+
+    public void OnUse()
+    {
+        throw new System.NotImplementedException();
     }
 }

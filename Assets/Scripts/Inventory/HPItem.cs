@@ -38,6 +38,8 @@ public class HPItem : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => false;
 
+    public bool hasOnUse => false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -50,5 +52,10 @@ public class HPItem : MonoBehaviour, IInventoryItem
             Instantiate(pickupEffect, transform.position, Quaternion.identity);
             SoundManagerScript.PlaySound("itemPick");
         }
+    }
+
+    public void OnUse()
+    {
+        throw new System.NotImplementedException();
     }
 }

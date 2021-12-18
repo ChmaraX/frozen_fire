@@ -18232,7 +18232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2949120807499318627, guid: e71fe31f7f0fd4e798b78561ec239fb4, type: 3}
-  spawnPosition: {x: 0, y: 0, z: 0}
+  spawnPosition: {x: 200, y: 0, z: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -24503,6 +24503,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1067661840}
     m_Modifications:
+    - target: {fileID: 3883280186475643258, guid: e9f79625f19c343b4927fca7e71e7068, type: 3}
+      propertyPath: _Image
+      value: 
+      objectReference: {fileID: 21300000, guid: cf6e21e75c3e34f3db0da087bf882101, type: 3}
     - target: {fileID: 4242903927841328742, guid: e9f79625f19c343b4927fca7e71e7068, type: 3}
       propertyPath: m_RootOrder
       value: 8

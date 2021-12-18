@@ -4,6 +4,8 @@ public class SpeedUpItem : MonoBehaviour, IInventoryItem
 {
     [SerializeField] GameObject pickupEffect;
 
+    private PlayerMovement playerMovement;
+
     public string Name
     {
         get
@@ -38,14 +40,19 @@ public class SpeedUpItem : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => true;
 
+    public bool hasOnUse => true;
+
+    public void OnUse()
+    {
+        playerMovement.moveSpeed = 14f;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-            playerMovement.moveSpeed = 14f;
-
+            playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
             Destroy(gameObject);
 
             Instantiate(pickupEffect, transform.position, Quaternion.identity);

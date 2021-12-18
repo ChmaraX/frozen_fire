@@ -40,6 +40,8 @@ public class ChestItem : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => false;
 
+    public bool hasOnUse => false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -70,5 +72,10 @@ public class ChestItem : MonoBehaviour, IInventoryItem
             BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
             boxCollider2D.enabled = false;
         }
+    }
+
+    public void OnUse()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -7,6 +7,10 @@ public interface IInventoryItem
 
     bool IsStorable { get; }
 
+    bool hasOnUse { get; }
+
+    void OnUse();
+
     Sprite Image { get; }
 
     InventorySlot Slot { get; set; }

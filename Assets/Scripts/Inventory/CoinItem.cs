@@ -36,6 +36,8 @@ public class CoinItem : MonoBehaviour, IInventoryItem
 
     public bool IsStorable => false;
 
+    public bool hasOnUse => false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -46,5 +48,10 @@ public class CoinItem : MonoBehaviour, IInventoryItem
             SoundManagerScript.PlaySound("itemPick");
             Destroy(gameObject);
         }
+    }
+
+    public void OnUse()
+    {
+        throw new System.NotImplementedException();
     }
 }
