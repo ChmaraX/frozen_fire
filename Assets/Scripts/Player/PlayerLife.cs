@@ -5,7 +5,7 @@ using System;
 
 public class PlayerLife : MonoBehaviour
 {
-    public ItemCollector itemCollector;
+    public ItemCollector itemCollector {get; private set;}
     private PlayerMovement playerMovement;
     private GameObject levelEnd;
 

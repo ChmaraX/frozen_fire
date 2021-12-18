@@ -149,8 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3973a4770cc1b48935458bd87f8e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireProjectile: {fileID: 2691614768734609400, guid: f6b5fe1a90ebb59449a3657dcc339233, type: 3}
-  iceProjectile: {fileID: 2691614768734609400, guid: 5acc8637b9e8824448efa126d12a7e62, type: 3}
   moveSpeed: 7
   jumpForce: 14
   crouchForce: 14
@@ -192,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f45cd4b099535439c33122bb2c7481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelEnd: {fileID: 8278703032553131772, guid: d77f1c37c71dbbb4b85e5b8c472255d9, type: 3}
+  itemCollector: {fileID: 2949120807499318635}
   respawnEffect: {fileID: 100000, guid: cacd21c594bac46fea07f9498e7e996f, type: 3}
   deathEffect: {fileID: 100004, guid: b787e5db7dd764483b7bfd6f5b0ec789, type: 3}
   lifeLossEffect: {fileID: 100006, guid: a335740b144e94b83b79ec57bcb8195e, type: 3}
