@@ -109,9 +109,6 @@ public class PlayerLife : MonoBehaviour
         {
             itemCollector.inventory.AddItem(item);
         }
-
-        // reset snapshot
-        itemCollector.itemsSnap = new List<IInventoryItem>();
     }
 
     private IEnumerator WaitAndResume(float secs)

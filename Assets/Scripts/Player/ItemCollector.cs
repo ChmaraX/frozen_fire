@@ -32,6 +32,9 @@ public class ItemCollector : MonoBehaviour
         if (item.Name == "Checkpoint")
         {
             lastCheckpointPos = collider.gameObject.transform.position;
+
+            // reset inv. snapshot to count only from last checkpoint
+            itemsSnap = new List<IInventoryItem>();
             return;
         }
 
