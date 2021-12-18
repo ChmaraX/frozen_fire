@@ -37,8 +37,8 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
     private void SaveProgress(ItemCollector itemCollector) 
     {
         int savedUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel");
-        int previousCollectedCoins = PlayerPrefs.GetInt(levelToUnlock-1 +"_coins", 0);
-        int previousDeaths = PlayerPrefs.GetInt(levelToUnlock-1 +"_deaths", 0);
+        int previousCollectedCoins = PlayerPrefs.GetInt(levelToUnlock-1 +"_coins", -1);
+        int previousDeaths = PlayerPrefs.GetInt(levelToUnlock-1 +"_deaths", -1);
 
         //check if levelToUnlock is not already unlocked
         if (savedUnlockedLevel < levelToUnlock) 
@@ -47,7 +47,7 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
         }
 
         //check if current coins collected & deaths are better than saved 
-        if (previousCollectedCoins <= itemCollector.collectedCoins && previousDeaths >= itemCollector.deathCount) 
+        if (previousCollectedCoins <= itemCollector.collectedCoins && (previousDeaths < 0 || previousDeaths >= itemCollector.deathCount)) 
         {
             PlayerPrefs.SetInt(levelToUnlock-1 + "_coins", LimitCollectedCoins(itemCollector.collectedCoins));
             PlayerPrefs.SetInt(levelToUnlock-1 + "_deaths", itemCollector.deathCount);
