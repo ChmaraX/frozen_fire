@@ -8,41 +8,30 @@ public class LevelEndController : MonoBehaviour
     public Text coinsText;
     public Text deathsText;
     public Button buyoutButton;
-    public ItemCollector itemCollector;
+    private ItemCollector itemCollector;
 
     private PlayerLife playerLife;
 
     public int currentLifeBuyout { get; private set; } = 1;
 
-    public void ShowLevelEnd(PlayerLife playerLife, bool gameOver)
+    public void ShowGameOver(PlayerLife playerLife)
     {
-        coinsText.text = playerLife.itemCollector.collectedCoins.ToString();
-        deathsText.text = playerLife.itemCollector.deathCount.ToString();
-        this.playerLife = playerLife;
-        if (gameOver)
-        {
-            levelEndMessage.text = "GAME OVER";
-            buyoutButton.gameObject.SetActive(true);
-            buyoutButton.interactable = playerLife.itemCollector.collectedCoins >= currentLifeBuyout;
-            buyoutButton.GetComponentInChildren<Text>().text = "Buy another life (" + currentLifeBuyout + " coins)";
-        }
-        else
-        {
-            buyoutButton.gameObject.SetActive(false);
-            levelEndMessage.text = "Level Completed";
-        }
-         this.OpenWindow();
+        SetPlayerValues(playerLife);
+        levelEndMessage.text = "GAME OVER";
+        EnableBuyoutButton();
+        this.OpenWindow();
     }
 
-    public void OpenWindow()
+    public void ShowLevelCompleted(PlayerLife playerLife)
     {
-        gameObject.GetComponent<CanvasGroup>().interactable = true;
-        gameObject.GetComponent<CanvasGroup>().alpha = 1;
-        gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        SetPlayerValues(playerLife);
+        levelEndMessage.text = "Level Completed";
+        this.OpenWindow();
     }
 
     public void CloseWindow()
     {
+        buyoutButton.gameObject.SetActive(false);
         gameObject.GetComponent<CanvasGroup>().interactable = false;
         gameObject.GetComponent<CanvasGroup>().alpha = 0;
         gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -59,7 +48,30 @@ public class LevelEndController : MonoBehaviour
 
     public void ReturnToLevelSelect()
     {
+        this.CloseWindow();
         SceneManager.LoadScene("LevelSelect");
+    }
+
+     private void SetPlayerValues(PlayerLife playerLife) 
+    {
+        this.playerLife = playerLife;
+        this.itemCollector = playerLife.itemCollector;
+        coinsText.text = playerLife.itemCollector.collectedCoins.ToString();
+        deathsText.text = playerLife.itemCollector.deathCount.ToString();
+    }
+
+    private void OpenWindow()
+    {
+        gameObject.GetComponent<CanvasGroup>().interactable = true;
+        gameObject.GetComponent<CanvasGroup>().alpha = 1;
+        gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
+    private void EnableBuyoutButton() 
+    {
+        buyoutButton.gameObject.SetActive(true);
+        buyoutButton.interactable = playerLife.itemCollector.collectedCoins >= currentLifeBuyout;
+        buyoutButton.GetComponentInChildren<Text>().text = "Buy another life (" + currentLifeBuyout + " coins)";
     }
 
 }

@@ -17,7 +17,7 @@ public class LevelCompleteTriggerBehavior : MonoBehaviour
                 .GetComponent<Rigidbody2D>()
                 .constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
             levelCompleteWindow.GetComponent<LevelEndController>()
-                    .ShowLevelEnd(collider.gameObject.GetComponent<PlayerLife>(), false);
+                    .ShowLevelCompleted(collider.gameObject.GetComponent<PlayerLife>());
                     
         }
     }

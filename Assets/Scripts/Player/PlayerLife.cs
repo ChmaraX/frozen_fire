@@ -41,7 +41,6 @@ public class PlayerLife : MonoBehaviour
         if (itemCollector.collectedHPs > 0)
         {
             itemCollector.decreaseHPsBy(1);
-            Debug.Log(itemCollector.collectedHPs);
 
             // return to last checkpoint
             HandleCheckpoint();
@@ -65,13 +64,8 @@ public class PlayerLife : MonoBehaviour
 
         playerMovement.moveSpeed = 0;
 
-        // GameObject levelEndTest = GUIRef.FindObject("LevelEnd");
- 
-        // levelEnd.SetActive(true);
         levelEnd = GameObject.FindWithTag("LevelEnd");
-        levelEnd.GetComponent<LevelEndController>().ShowLevelEnd(this, true);
-        //display popup, enable buyout if coins > threshold
-        // StartCoroutine(WaitAndRestart(1.5f));
+        levelEnd.GetComponent<LevelEndController>().ShowGameOver(this);
     }
 
     private void RestartLevel()
