@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -21,8 +22,10 @@ public class PlayerLife : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         string CollidingObjectTag = collision.gameObject.tag;
+        string[] OneSideCollidable = { "FireTrap", "IceTrap", "SawTrap" };
+
         // if colliding object is of type Fire|Ice Trap -> collide regardless of side
-        if (CollidingObjectTag.Contains("FireTrap") || CollidingObjectTag.Contains("IceTrap"))
+        if (Array.IndexOf(OneSideCollidable, CollidingObjectTag) > -1)
         {
             HandleCollision(collision);
         }
