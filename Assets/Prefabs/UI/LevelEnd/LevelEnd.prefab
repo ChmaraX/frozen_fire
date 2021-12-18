@@ -858,7 +858,6 @@ MonoBehaviour:
   coinsText: {fileID: 961885987187544556}
   deathsText: {fileID: 1981833208140125434}
   buyoutButton: {fileID: 4496197626539628172}
-  itemCollector: {fileID: 2949120807499318635, guid: e71fe31f7f0fd4e798b78561ec239fb4, type: 3}
 --- !u!225 &9037665876460505631
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -867,9 +866,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278703032553131772}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1001 &5665820933422260776
 PrefabInstance:
@@ -1226,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9217292358374586476, guid: 0e3b878de555f9d47af15e93e50477fb, type: 3}
       propertyPath: m_Text
-      value: 4
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 9217292358374586476, guid: 0e3b878de555f9d47af15e93e50477fb, type: 3}
       propertyPath: m_Color.b
