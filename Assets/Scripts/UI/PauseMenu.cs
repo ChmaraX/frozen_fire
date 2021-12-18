@@ -27,20 +27,20 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu() 
     {
+        this.ToggleGamePaused();
         SceneManager.LoadScene("MainMenu");
+        
     }
 
 
     public void ResumeGame() 
     {
         pauseMenuRef.SetActive(false);
-        Time.timeScale = 1f;
         ToggleGamePaused();
     }
 
     public void PauseGame()
-    {
-        Time.timeScale = 0f;
+    {  
         ToggleGamePaused();
     }
 
@@ -52,6 +52,7 @@ public class PauseMenu : MonoBehaviour
 
     void ToggleGamePaused()
     {
+        Time.timeScale = Time.timeScale == 0f? 1f : 0f;
         GamePaused = !GamePaused;
     }
 
