@@ -289,6 +289,7 @@ MonoBehaviour:
   deathsText: {fileID: 8314961961963297406}
   levelNumberText: {fileID: 8728430866658038632}
   levelNumber: 0
+  sceneName: 
 --- !u!1 &4108231433759263680
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,8 +595,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107, y: 34}
-  m_SizeDelta: {x: 158.0799, y: 73.98}
+  m_AnchoredPosition: {x: -79.31309, y: 34}
+  m_SizeDelta: {x: 213.4538, y: 73.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &422755804475992054
 CanvasRenderer:
@@ -625,7 +626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0 / 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: deadf39fcd3a73040b87ecc1f7c5d745, type: 2}
   m_sharedMaterial: {fileID: -7116239129059057766, guid: deadf39fcd3a73040b87ecc1f7c5d745, type: 2}

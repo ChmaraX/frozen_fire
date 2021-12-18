@@ -16,7 +16,8 @@ public class LevelSelector : MonoBehaviour
             int levelNumber = i+1;
             int coins = PlayerPrefs.GetInt(levelNumber + "_coins", 0);
             int deaths = PlayerPrefs.GetInt(levelNumber + "_deaths", 0);
-            levelEntries[i].GetComponentInChildren<LevelSelectEntry>().SetLevelData(coins, deaths);
+            int totalCoinsInLevel = PlayerPrefs.GetInt(levelNumber + "_totalCoins", 0);
+            levelEntries[i].GetComponentInChildren<LevelSelectEntry>().SetLevelData(coins, deaths, totalCoinsInLevel);
             
             //unlock levels that are only one above last completed level
             if (levelNumber > lastUnlockedLevel) 
