@@ -16,6 +16,7 @@ public class LevelEndController : MonoBehaviour
 
     private int buyoutIncrement = 3;
 
+    //show window with game over elements (invoked when player died)
     public void ShowGameOver(PlayerLife playerLife)
     {
         SetPlayerValues(playerLife);
@@ -24,6 +25,7 @@ public class LevelEndController : MonoBehaviour
         this.OpenWindow();
     }
 
+    //called when level has been succesfully completed
     public void ShowLevelCompleted(PlayerLife playerLife)
     {
         SetPlayerValues(playerLife);
@@ -39,10 +41,10 @@ public class LevelEndController : MonoBehaviour
         gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
+    //take coins from player and teleport him to the previous checkpoint
     public void BuyoutAndResume()
     {
         itemCollector.decreaseCoinsBy(currentLifeBuyout);
-        itemCollector.increaseHPsBy(1);
         currentLifeBuyout += buyoutIncrement;
         this.CloseWindow();
         this.playerLife.HandleCheckpoint();
@@ -54,7 +56,8 @@ public class LevelEndController : MonoBehaviour
         SceneManager.LoadScene("LevelSelect");
     }
 
-     private void SetPlayerValues(PlayerLife playerLife) 
+    //set needed values for both gameover and level complete scenarios
+    private void SetPlayerValues(PlayerLife playerLife)
     {
         this.playerLife = playerLife;
         this.itemCollector = playerLife.itemCollector;
@@ -62,6 +65,7 @@ public class LevelEndController : MonoBehaviour
         deathsText.text = playerLife.itemCollector.deathCount.ToString();
     }
 
+    //workaround for disabling level end screen - rather disable wrapper canvas group
     private void OpenWindow()
     {
         gameObject.GetComponent<CanvasGroup>().interactable = true;
@@ -69,12 +73,13 @@ public class LevelEndController : MonoBehaviour
         gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
-    private void EnableBuyoutButton() 
+    //enables buyout button and makes in interactable if player can buy himself out using coins
+    private void EnableBuyoutButton()
     {
         buyoutButton.gameObject.SetActive(true);
         bool isInteractable = playerLife.itemCollector.collectedCoins >= currentLifeBuyout;
         buyoutButton.interactable = isInteractable;
-        if (!isInteractable) 
+        if (!isInteractable)
         {
             SoundManagerScript.PlaySound("gameOver");
         }

@@ -36,6 +36,7 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    //check if player has any HPs left - if true, teleport to previous checkpoint, else display level end overlay
     private void HandleCollision(Collision2D collision)
     {
         if (itemCollector.collectedHPs > 0)

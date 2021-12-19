@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+	//plays first available level, if level 4 (game complete) is the last unlocked, display credits
     public void PlayFirstAvailableLevel()
 	{
 		int lastUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel", 1);

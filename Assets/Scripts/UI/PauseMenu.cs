@@ -29,9 +29,7 @@ public class PauseMenu : MonoBehaviour
     {
         this.ToggleGamePaused();
         SceneManager.LoadScene("MainMenu");
-        
     }
-
 
     public void ResumeGame() 
     {
@@ -52,7 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     void ToggleGamePaused()
     {
-        Time.timeScale = Time.timeScale == 0f? 1f : 0f;
+        Time.timeScale = Time.timeScale == 0f ? 1f : 0f;
         GamePaused = !GamePaused;
     }
 

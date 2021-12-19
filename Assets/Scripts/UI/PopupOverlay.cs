@@ -8,6 +8,7 @@ public class PopupOverlay : MonoBehaviour
 
     public Text bodyTitleTextRef;
 
+    //close popup if enter has been pressed
     void Update()
     {
         if (Input.GetKeyDown("return"))
@@ -23,6 +24,7 @@ public class PopupOverlay : MonoBehaviour
         this.SetPopupActive();
     }
 
+    //show popup and freeze time
     public void SetPopupActive()
     {
         gameObject.SetActive(true);
