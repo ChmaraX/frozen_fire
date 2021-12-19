@@ -76,10 +76,11 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // prevent crouching in air
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || Input.GetButtonUp("Crouch"))
             {
                 StopCrouch();
             }
+
         }
 
         UpdateAnimationState();
@@ -131,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         SoundManagerScript.PlaySound("playerJump");
+        StopCrouch();
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 

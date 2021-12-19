@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour
 
     public IList<InventorySlot> mSlots = new List<InventorySlot>();
 
+    public bool itemUseHalted = false;
+
     public event EventHandler<InventoryEventArgs> ItemAdded;
     public event EventHandler<int> HpsAdded;
     public event EventHandler<int> CoinsAdded;
@@ -62,14 +64,17 @@ public class Inventory : MonoBehaviour
 
     internal void UseItem(IInventoryItem item)
     {
-        ItemUsed?.Invoke(this, new InventoryEventArgs(item));
-
-        if (item.hasOnUse)
+        if (!this.itemUseHalted) 
         {
-            item.OnUse();
-        }
+            ItemUsed?.Invoke(this, new InventoryEventArgs(item));
 
-        RemoveItem(item);
+            if (item.hasOnUse)
+            {
+                item.OnUse();
+            }
+
+            RemoveItem(item);
+        }
     }
 
     public void AddCoins(int amount)

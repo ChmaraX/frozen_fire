@@ -118,8 +118,10 @@ public class PlayerLife : MonoBehaviour
 
     private IEnumerator WaitAndResume(float secs)
     {
+        itemCollector.inventory.itemUseHalted = true;
         yield return new WaitForSeconds(secs);
         // restore movement speed back to normal
         playerMovement.moveSpeed = 7f;
+        itemCollector.inventory.itemUseHalted = false;
     }
 }
