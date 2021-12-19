@@ -8,12 +8,29 @@ public class MainMenuController : MonoBehaviour
     public void PlayFirstAvailableLevel()
 	{
 		int lastUnlockedLevel = PlayerPrefs.GetInt("lastUnlockedLevel", 1);
-		SceneManager.LoadScene("Level_" + lastUnlockedLevel);
+		if (lastUnlockedLevel == 4) 
+		{
+			OpenCredits();
+		}
+		else 
+		{
+			OpenScene("Level_" + lastUnlockedLevel);
+		}
 	}
 
 	public void OpenLevelSelect() 
 	{
-		SceneManager.LoadScene("LevelSelect");
+		OpenScene("LevelSelect");
+	}
+
+	public void OpenCredits() 
+	{
+		OpenScene("Credits");
+	}
+
+	private void OpenScene(string sceneName) 
+	{
+		SceneManager.LoadScene(sceneName);
 	}
 
 	public void ExitGame() 
