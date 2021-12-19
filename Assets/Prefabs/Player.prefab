@@ -84,7 +84,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,7 +129,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 10.24, y: 5.12}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 10.24, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -190,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f45cd4b099535439c33122bb2c7481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCollector: {fileID: 2949120807499318635}
   respawnEffect: {fileID: 100000, guid: cacd21c594bac46fea07f9498e7e996f, type: 3}
   deathEffect: {fileID: 100004, guid: b787e5db7dd764483b7bfd6f5b0ec789, type: 3}
   lifeLossEffect: {fileID: 100006, guid: a335740b144e94b83b79ec57bcb8195e, type: 3}
